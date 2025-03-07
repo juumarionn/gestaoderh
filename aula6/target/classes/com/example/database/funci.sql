@@ -44,8 +44,10 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   `advertencias` VARCHAR(200) NULL,
   UNIQUE INDEX `ctps_UNIQUE` (`ctps` ASC),
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
-  UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC),
-  ALTER TABLE `gestaofuncionarios`.`dadosprofissionais`;
+  UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
+
+ALTER TABLE `gestaofuncionarios`.`dadosprofissionais` 
 ADD COLUMN `idprof` INT NOT NULL AUTO_INCREMENT AFTER `advertencias`,
 ADD PRIMARY KEY (`idprof`),
-ADD UNIQUE INDEX `idprof_UNIQUE` (`idprof` ASC));
+ADD UNIQUE INDEX `idprof_UNIQUE` (`idprof` ASC);
+
