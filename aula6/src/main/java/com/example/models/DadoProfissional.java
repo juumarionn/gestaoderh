@@ -1,6 +1,7 @@
 package com.example.models;
 
 public class DadoProfissional {
+    private Integer id;
     private String cargo;
     private String departamento;
     private String funcao;
@@ -17,8 +18,9 @@ public class DadoProfissional {
     private String acidentes;
     private String advertencias;
 
-    public DadoProfissional(String cargo, String departamento, String funcao,  String maquina_opera, String admissao, String salario, String dados_bancarios, String beneficios,
+    public DadoProfissional(Integer id, String cargo, String departamento, String funcao,  String maquina_opera, String admissao, String salario, String dados_bancarios, String beneficios,
     String escolaridade, String ctps, String pis_pasep, String contrato, String horario_trabalho, String acidentes, String advertencias) {
+        this.id = id;
         this.cargo = cargo;
         this.departamento = departamento;
         this.funcao = funcao;
@@ -34,6 +36,12 @@ public class DadoProfissional {
         this.horario_trabalho = horario_trabalho;
         this.acidentes = acidentes;
         this.advertencias = advertencias;
+
+}
+
+public Integer getId() {
+    return id;
+
 }
 
 public String getCargo() {
@@ -76,7 +84,7 @@ public String getCtps() {
     return ctps;
 }
 
-public String pis_pasep() {
+public String getpis_pasep() {
     return pis_pasep;
 }
 
@@ -95,5 +103,6 @@ public String getAcidentes() {
 public String getAdvertencia() {
     return advertencias;
 }
+
 
 }
