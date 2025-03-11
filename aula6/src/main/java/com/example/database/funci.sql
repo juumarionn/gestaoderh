@@ -27,6 +27,7 @@ CREATE TABLE `gestaofuncionarios`.`dadospessoais` (
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC));
 
 CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
+  `idprof` INT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
   `cargo` VARCHAR(30) NOT NULL,
   `departamento` VARCHAR(45) NOT NULL,
   `funcao` VARCHAR(150) NOT NULL,
@@ -46,8 +47,5 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
 
-ALTER TABLE `gestaofuncionarios`.`dadosprofissionais` 
-ADD COLUMN `idprof` INT NOT NULL AUTO_INCREMENT AFTER `advertencias`,
-ADD PRIMARY KEY (`idprof`),
-ADD UNIQUE INDEX `idprof_UNIQUE` (`idprof` ASC);
+
 
