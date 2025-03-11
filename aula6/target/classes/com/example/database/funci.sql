@@ -44,10 +44,8 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   `acidentes` VARCHAR(200) NULL,
   `advertencias` VARCHAR(200) NULL,
   `dados_pessoais` INT,
-  FOREIGN KEY (dados_pessoais) REFERENCES dadospessoais(id);
+  
+  FOREIGN KEY (dados_pessoais) REFERENCES dadospessoais(id),
   UNIQUE INDEX `ctps_UNIQUE` (`ctps` ASC),
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
-
-
-
