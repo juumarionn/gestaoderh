@@ -410,7 +410,7 @@ private void salvarDadoProfissional() {
         }
     
 
-        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
+        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem(){
         if (DadoProfissionalSelecionado!= null) {
             
             txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
@@ -430,7 +430,7 @@ private void salvarDadoProfissional() {
 
 
             tabPaneDadoProfissional.getSelectionModel().select(tabAtualizarDadoProfissional);
-        }
+        
     }
 
 
@@ -531,6 +531,65 @@ private void salvarDadoProfissional() {
         tableDadoPessoal.setItems(dadosFiltrados);
         }
 
+        @FXML
+        public void filtrarDadoProfissional() {
+            FilteredList<DadoProfissional> dadosFiltrados = new FilteredList<>(listaDadoProfissional, p -> true);
+    
+            dadosFiltrados.setPredicate(DadoProfissional -> {
+                if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargo().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrodepartamentoFunc.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamentoFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrofuncaoFunc.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncaoFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtromaquinasFunc.getText().isEmpty() && !DadoProfissional.getMaquina_opera().toLowerCase().contains(filtromaquinasFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtroadmissaoFunc.getText().isEmpty() && !DadoProfissional.getAdmissao().toLowerCase().contains(filtroadmissaoFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrosalarioFunc.getText().isEmpty() && !DadoProfissional.getSalario().toLowerCase().contains(filtrosalarioFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrodadosbancariosFunc.getText().isEmpty() && !DadoProfissional.getDados_bancarios().toLowerCase().contains(filtrodadosbancariosFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrobeneficiosFunc.getText().isEmpty() && !DadoProfissional.getBeneficios().toLowerCase().contains(filtrobeneficiosFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtroescolaridadeFunc.getText().isEmpty() && !DadoProfissional.getEscolaridade().toLowerCase().contains(filtroescolaridadeFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtroctpsFunc.getText().isEmpty() && !DadoProfissional.getCtps().toLowerCase().contains(filtroctpsFunc.getText().toLowerCase())) {
+                    return false;
+                }
+    
+                if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasep().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                    
+                if (!filtrocontratoFunc.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontratoFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtrohorarioFunc.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorarioFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtroacidentesFunc.getText().isEmpty() && !DadoProfissional.getAcidentes().toLowerCase().contains(filtroacidentesFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                if (!filtroadvertenciasFunc.getText().isEmpty() && !DadoProfissional.getAdvertencia().toLowerCase().contains(filtroadvertenciasFunc.getText().toLowerCase())) {
+                    return false;
+                }
+                
+    
+                return true;
+            });
+    
+            tableDadoProfissional.setItems(dadosFiltrados);
+        }
 
     
     @FXML
@@ -553,67 +612,28 @@ private void salvarDadoProfissional() {
         filtroContatoEmergenciaFunc.clear();
 
         tableDadoPessoal.setItems(listaDadoPessoal);
+
+        filtrocargoFunc.clear();
+        filtrodepartamentoFunc.clear();
+        filtrofuncaoFunc.clear();
+        filtromaquinasFunc.clear();
+        filtroadmissaoFunc.clear();
+        filtrosalarioFunc.clear();
+        filtrodadosbancariosFunc.clear();
+        filtrobeneficiosFunc.clear();
+        filtroescolaridadeFunc.clear();
+        filtroctpsFunc.clear();
+        filtropisFunc.clear();
+        filtrocontratoFunc.clear();
+        filtrohorarioFunc.clear();
+        filtroacidentesFunc.clear();
+        filtroadvertenciasFunc.clear();
+       
+
+        tableDadoProfissional.setItems(listaDadoProfissional);
     }
 
 @FXML
-    public void filtrarDadoProfissional() {
-        FilteredList<DadoProfissional> dadosFiltrados = new FilteredList<>(listaDadoProfissional, p -> true);
-
-        dadosFiltrados.setPredicate(DadoProfissional -> {
-            if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargo().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrodepartamentoFunc.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamentoFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrofuncaoFunc.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncaoFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtromaquinasFunc.getText().isEmpty() && !DadoProfissional.getMaquina_opera().toLowerCase().contains(filtromaquinasFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtroadmissaoFunc.getText().isEmpty() && !DadoProfissional.getAdmissao().toLowerCase().contains(filtroadmissaoFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrosalarioFunc.getText().isEmpty() && !DadoProfissional.getSalario().toLowerCase().contains(filtrosalarioFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrodadosbancariosFunc.getText().isEmpty() && !DadoProfissional.getDados_bancarios().toLowerCase().contains(filtrodadosbancariosFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrobeneficiosFunc.getText().isEmpty() && !DadoProfissional.getBeneficios().toLowerCase().contains(filtrobeneficiosFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtroescolaridadeFunc.getText().isEmpty() && !DadoProfissional.getEscolaridade().toLowerCase().contains(filtroescolaridadeFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtroctpsFunc.getText().isEmpty() && !DadoProfissional.getCtps().toLowerCase().contains(filtroctpsFunc.getText().toLowerCase())) {
-                return false;
-            }
-
-            if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasep().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
-                return false;
-            }
-                
-            if (!filtrocontratoFunc.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontratoFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtrohorarioFunc.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorarioFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtroacidentesFunc.getText().isEmpty() && !DadoProfissional.getAcidentes().toLowerCase().contains(filtroacidentesFunc.getText().toLowerCase())) {
-                return false;
-            }
-            if (!filtroadvertenciasFunc.getText().isEmpty() && !DadoProfissional.getAdvertencia().toLowerCase().contains(filtroadvertenciasFunc.getText().toLowerCase())) {
-                return false;
-            }
-            
-
-            return true;
-        });
-
-        tableDadoProfissional.setItems(dadosFiltrados);
-    }
     
     @FXML
     public void excluirDadoPessoal(){
@@ -642,6 +662,35 @@ private void salvarDadoProfissional() {
         alerta.showAndWait();
     }
 }
+
+@FXML
+    public void excluirDadoProfissional(){
+        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
+        if (DadoProfissionalSelecionado != null) {
+            try (Connection conn = Database.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement("DELETE FROM DadoProfissional WHERE id = ?")) {
+                stmt.setInt(1, DadoProfissionalSelecionado.getId());
+                stmt.executeUpdate();
+                carregarDadoProfissional();
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário excluído com sucesso!");
+                tabPaneDadoProfissional.getSelectionModel().select(tabListarDadoProfissional);
+            } catch (SQLException e) {
+                mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao excluir funcionário: " + e.getMessage());
+            }
+        } else {
+            mostrarAlerta(Alert.AlertType.WARNING, "Atenção", "Selecione um funcionário para excluir!");
+        }
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensagem) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensagem);
+        alerta.showAndWait();
+    }
+}
+
 
 
 
