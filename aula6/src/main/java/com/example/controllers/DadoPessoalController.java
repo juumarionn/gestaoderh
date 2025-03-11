@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import com.example.database.Database;
 import com.example.models.DadoPessoal;
+import com.example.models.DadoProfissional;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -30,6 +31,22 @@ public class DadoPessoalController {
     @FXML private TextField txttipo_sanguineoFunc;
     @FXML private TextField txtcontato_emergenciaFunc;
 
+    @FXML private TextField txtcargoFunc;
+    @FXML private TextField txtdepartamentoFunc;
+    @FXML private TextField txtfuncaoFunc;
+    @FXML private TextField txtmaquinasFunc;
+    @FXML private TextField txtadmissaoFunc;
+    @FXML private TextField txtsalarioFunc;
+    @FXML private TextField txtdadosbancariosFunc;
+    @FXML private TextField txtbeneficiosFunc;
+    @FXML private TextField txtescolaridadeFunc;
+    @FXML private TextField txtctpsFunc;
+    @FXML private TextField txtpisFunc;
+    @FXML private TextField txtcontratoFunc;
+    @FXML private TextField txthorarioFunc;
+    @FXML private TextField txtacidentesFunc;
+    @FXML private TextField txtadvertenciasFunc;
+
 
     @FXML private TextField txtIdAtualizarFunc;
     @FXML private TextField txtNomeAtualizarFunc;
@@ -48,6 +65,22 @@ public class DadoPessoalController {
     @FXML private TextField txtFiliacaoAtualizarFunc;
     @FXML private TextField txtTipoSanguineoAtualizarFunc;
     @FXML private TextField txtContatoEmergenciaAtualizarFunc;
+
+    @FXML private TextField txtcargoAtualizarFunc;
+    @FXML private TextField txtdepartamentoAtualizarFunc;
+    @FXML private TextField txtfuncaoAtualizarFunc;
+    @FXML private TextField txtmaquinasAtualizarFunc;
+    @FXML private TextField txtadmissaoAtualizarFunc;
+    @FXML private TextField txtsalarioAtualizarFunc;
+    @FXML private TextField txtdadosbancariosAtualizarFunc;
+    @FXML private TextField txtbeneficiosAtualizarFunc;
+    @FXML private TextField txtescolaridadeAtualizarFunc;
+    @FXML private TextField txtctpsAtualizarFunc;
+    @FXML private TextField txtpisAtualizarFunc;
+    @FXML private TextField txtcontratoAtualizarFunc;
+    @FXML private TextField txthorarioAtualizarFunc;
+    @FXML private TextField txtacidentesAtualizarFunc;
+    @FXML private TextField txtadvertenciasAtualizarFunc;
 
  
 
@@ -71,6 +104,24 @@ public class DadoPessoalController {
     @FXML private TableColumn<DadoPessoal, String> colTipo_SanguineoFunc;
     @FXML private TableColumn<DadoPessoal, String> colContato_EmergenciaFunc;
 
+    @FXML private TableView<DadoProfissional> tableDadoProfissional;
+    @FXML private TableColumn<DadoProfissional, String> colcargoFunc;
+    @FXML private TableColumn<DadoProfissional, String> coldepartamentoFunc;
+    @FXML private TableColumn<DadoProfissional, String> colfuncaoFunc;
+    @FXML private TableColumn<DadoProfissional, String> colmaquinasFunc;
+    @FXML private TableColumn<DadoProfissional, String> coladmissaoFunc;
+    @FXML private TableColumn<DadoProfissional, String> colsalarioFunc;
+    @FXML private TableColumn<DadoProfissional, String> coldadosbancariosFunc;
+    @FXML private TableColumn<DadoProfissional, String> colbeneficiosFunc;
+    @FXML private TableColumn<DadoProfissional, String> colescolaridadeFunc;
+    @FXML private TableColumn<DadoProfissional, String> colctpsFunc;
+    @FXML private TableColumn<DadoProfissional, String> colpisFunc;
+    @FXML private TableColumn<DadoProfissional, String> colcontratoFunc;
+    @FXML private TableColumn<DadoProfissional, String> colhorarioFunc;
+    @FXML private TableColumn<DadoProfissional, String> colacidentesFunc;
+    @FXML private TableColumn<DadoProfissional, String> coladvertenciasFunc;
+   
+
 
     @FXML private TextField filtroNomeFunc;
     @FXML private TextField filtroDataNascimentoFunc;
@@ -89,6 +140,22 @@ public class DadoPessoalController {
     @FXML private TextField filtroTipoSanguineoFunc;
     @FXML private TextField filtroContatoEmergenciaFunc;
 
+    @FXML private TextField filtrocargoFunc;
+    @FXML private TextField filtrodepartamentoFunc;
+    @FXML private TextField filtrofuncaoFunc;
+    @FXML private TextField filtromaquinasFunc;
+    @FXML private TextField filtroadmissaoFunc;
+    @FXML private TextField filtrosalarioFunc;
+    @FXML private TextField filtrodadosbancariosFunc;
+    @FXML private TextField filtrobeneficiosFunc;
+    @FXML private TextField filtroescolaridadeFunc;
+    @FXML private TextField filtroctpsFunc;
+    @FXML private TextField filtropisFunc;
+    @FXML private TextField filtrocontratoFunc;
+    @FXML private TextField filtrohorarioFunc;
+    @FXML private TextField filtroacidentesFunc;
+    @FXML private TextField filtroadvertenciasFunc;
+
 
 
     @FXML private TabPane tabPaneDadoPessoal;
@@ -96,7 +163,14 @@ public class DadoPessoalController {
     @FXML private Tab tabAtualizarDadoPessoal;
     @FXML private Tab tabListarDadoPessoal;
 
+    @FXML private TabPane tabPaneDadoProfissional;
+    @FXML private Tab tabCadastrarDadoProfissional;
+    @FXML private Tab tabAtualizarDadoProfissional;
+    @FXML private Tab tabListarDadoProfissional;
+
+
     private ObservableList<DadoPessoal> listaDadoPessoal = FXCollections.observableArrayList();
+    private ObservableList<DadoProfissional> listaDadoProfissional = FXCollections.observableArrayList();
 
 
     @FXML
@@ -120,10 +194,36 @@ public class DadoPessoalController {
         colContato_EmergenciaFunc.setCellValueFactory(new PropertyValueFactory<>("contato_emergencia"));
 
         carregarDadoPessoal();
+
+        colcargoFunc.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+        coldepartamentoFunc.setCellValueFactory(new PropertyValueFactory<>("departamento"));
+        colfuncaoFunc.setCellValueFactory(new PropertyValueFactory<>("funcao"));
+        colmaquinasFunc.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
+        coladmissaoFunc.setCellValueFactory(new PropertyValueFactory<>("admissao"));
+        colsalarioFunc.setCellValueFactory(new PropertyValueFactory<>("salario"));
+        coldadosbancariosFunc.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
+        colbeneficiosFunc.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
+        colescolaridadeFunc.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
+        colctpsFunc.setCellValueFactory(new PropertyValueFactory<>("ctps"));
+        colpisFunc.setCellValueFactory(new PropertyValueFactory<>("pis"));
+        colcontratoFunc.setCellValueFactory(new PropertyValueFactory<>("contrato"));
+        colhorarioFunc.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colacidentesFunc.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
+        coladvertenciasFunc.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
+        
+
+        carregarDadoProfissional();
+    
     
 
 
     tableDadoPessoal.setOnMouseClicked((MouseEvent event) -> {
+        if (event.getClickCount() > 1) {
+            preencherCamposAtualizacao();
+        }
+    });
+
+    tableDadoProfissional.setOnMouseClicked((MouseEvent event) -> {
         if (event.getClickCount() > 1) {
             preencherCamposAtualizacao();
         }
@@ -238,6 +338,22 @@ private void salvarDadoPessoal() {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao carregar funcionários: " + e.getMessage());
         }
     }
+
+    private void carregarDadoProfissional() {
+        listaDadoProfissional.clear();
+        try (Connection conn = Database.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM DadoProfissional")) {
+
+            while (rs.next()) {
+                listaDadoProfissional.add(new DadoProfissional (rs.getInt("id"), rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
+            }
+            tableDadoProfissional.setItems(listaDadoProfissional);
+        } catch (SQLException e) {
+
+            mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao carregar funcionários: " + e.getMessage());
+    }
+}
         @FXML
     public void filtrarDadopessoal() {
         FilteredList<DadoPessoal> dadosFiltrados = new FilteredList<>(listaDadoPessoal, p -> true);
