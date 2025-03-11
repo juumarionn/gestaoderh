@@ -397,21 +397,21 @@ private void salvarDadoProfissional() {
             DadoPessoal dadopessoalSelecionado = tableDadoPessoal.getSelectionModel().getSelectedItem();
             if (dadopessoalSelecionado!= null) {
                 txtIdAtualizarFunc.setText(String.valueOf(dadopessoalSelecionado.getId()));
-                txtEstadoCivilAtualizarFunc.setText(dadopessoalSelecionado.getEstadoCivil());
+                txtEstadoCivilAtualizarFunc.setText(dadopessoalSelecionado.getEstado_civil());
                 txtConjugeAtualizarFunc.setText(dadopessoalSelecionado.getConjuge());
                 txtDependentesAtualizarFunc.setText(dadopessoalSelecionado.getDependentes());
                 txtEnderecoAtualizarFunc.setText(dadopessoalSelecionado.getEndereco());
 ;               txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
                 txtEmailAtualizarFunc.setText(dadopessoalSelecionado.getEmail());
-                txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContatoEmergencia());
+                txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContato_emergencia());
 
                 tabPaneDadoPessoal.getSelectionModel().select(tabAtualizarDadoPessoal);
             }
         }
     
 
-        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
-        if (DadoProfissionalSelecionado!= null) {
+        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem(); {
+        if (DadoProfissionalSelecionado != null) {
             
             txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
             txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
@@ -472,16 +472,16 @@ private void salvarDadoProfissional() {
         FilteredList<DadoPessoal> dadosFiltrados = new FilteredList<>(listaDadoPessoal, p -> true);
 
         dadosFiltrados.setPredicate(dadopessoal -> {
-            if (!filtroNomeFunc.getText().isEmpty() && !dadopessoal.getNome().toLowerCase().contains(filtroNomeFunc.getText().toLowerCase())) {
+            if (!filtroNomeFunc.getText().isEmpty() && !dadopessoal.getNome_completo().toLowerCase().contains(filtroNomeFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroDataNascimentoFunc.getText().isEmpty() && !dadopessoal.getDataNascimento().toLowerCase().contains(filtroDataNascimentoFunc.getText().toLowerCase())) {
+            if (!filtroDataNascimentoFunc.getText().isEmpty() && !dadopessoal.getData_nascimento().toLowerCase().contains(filtroDataNascimentoFunc.getText().toLowerCase())) {
                 return false;
             }
             if (!filtroSexoFunc.getText().isEmpty() && !dadopessoal.getSexo().toLowerCase().contains(filtroSexoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroEstadoCivilFunc.getText().isEmpty() && !dadopessoal.getEstadoCivil().toLowerCase().contains(filtroEstadoCivilFunc.getText().toLowerCase())) {
+            if (!filtroEstadoCivilFunc.getText().isEmpty() && !dadopessoal.getEstado_civil().toLowerCase().contains(filtroEstadoCivilFunc.getText().toLowerCase())) {
                 return false;
             }
             if (!filtroConjugeFunc.getText().isEmpty() && !dadopessoal.getConjuge().toLowerCase().contains(filtroConjugeFunc.getText().toLowerCase())) {
@@ -518,10 +518,10 @@ private void salvarDadoProfissional() {
             if (!filtroFiliacaoFunc.getText().isEmpty() && !dadopessoal.getFiliacao().toLowerCase().contains(filtroFiliacaoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroTipoSanguineoFunc.getText().isEmpty() && !dadopessoal.getTipoSanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getText().toLowerCase())) {
+            if (!filtroTipoSanguineoFunc.getText().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContatoEmergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
+            if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContato_emergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
                 return false;
             }
 
@@ -591,7 +591,7 @@ private void salvarDadoProfissional() {
                 return false;
             }
 
-            if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasep().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
+            if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasesp().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
                 return false;
             }
                 
