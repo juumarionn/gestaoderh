@@ -687,7 +687,7 @@ private void salvarDadoProfissional() {
         alerta.setTitle(titulo);
         alerta.setHeaderText(null);
         alerta.setContentText(mensagem);
-        alerta.showAndWait();
+        alerta.showAndWait();;
     }
 }
 
