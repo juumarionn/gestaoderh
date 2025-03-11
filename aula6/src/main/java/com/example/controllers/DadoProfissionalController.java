@@ -125,7 +125,7 @@ public class DadoProfissionalController {
     });
 }
 
-
+@FXML
 private void salvarDadoProfissional() {
     try (Connection conn = Database.getConnection();
          PreparedStatement stmt = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
@@ -194,7 +194,7 @@ private void salvarDadoProfissional() {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao atualizar funcionário: " + e.getMessage());
             }
         }
-
+@FXML
         private void limparCamposAtualizacao() {
            
             txtcargoAtualizarFunc.clear();
@@ -246,7 +246,7 @@ private void salvarDadoProfissional() {
                  ResultSet rs = stmt.executeQuery("SELECT * FROM DadoProfissional")) {
     
                 while (rs.next()) {
-                    listaDadoProfissional.add(new DadoProfissional (rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
+                    listaDadoProfissional.add(new DadoProfissional (rs.getInt("id"), rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
                 }
                 tableDadoProfissional.setItems(listaDadoProfissional);
             } catch (SQLException e) {
