@@ -258,6 +258,34 @@ private void salvarDadoPessoal() {
             mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao salvar funcionário: " + e.getMessage());
         }
     }
+
+    @FXML
+private void salvarDadoProfissional() {
+    try (Connection conn = Database.getConnection();
+         PreparedStatement stmt = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            stmt.setString(1, txtcargoFunc.getText());
+            stmt.setString(2, txtdepartamentoFunc.getText());
+            stmt.setString(3, txtfuncaoFunc.getText());
+            stmt.setString(4, txtmaquinasFunc.getText());
+            stmt.setString(5, txtadmissaoFunc.getText());
+            stmt.setString(6, txtsalarioFunc.getText());
+            stmt.setString(7, txtdadosbancariosFunc.getText());
+            stmt.setString(8, txtbeneficiosFunc.getText());
+            stmt.setString(9, txtescolaridadeFunc.getText());
+            stmt.setString(10, txtctpsFunc.getText());
+            stmt.setString(11, txtpisFunc.getText());
+            stmt.setString(12, txtcontratoFunc.getText());
+            stmt.setString(13, txthorarioFunc.getText());
+            stmt.setString(14, txtacidentesFunc.getText());
+            stmt.setString(15, txtadvertenciasFunc.getText());
+            stmt.executeUpdate();
+            carregarDadoProfissional();
+
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário salvo com sucesso!");
+        } catch (SQLException e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao salvar funcionário: " + e.getMessage());
+        }
+    }
             
     @FXML
     public void atualizarDadoPessoal() {
@@ -292,6 +320,48 @@ private void salvarDadoPessoal() {
         }
 
         @FXML
+        public void atualizarDadoProfissional() {
+            
+                
+                String cargo = txtcargoAtualizarFunc.getText();
+                String departamento = txtdepartamentoAtualizarFunc.getText();
+                String funcao = txtfuncaoAtualizarFunc.getText();
+                String maquinas = txtmaquinasAtualizarFunc.getText();
+                String salario = txtsalarioAtualizarFunc.getText();
+                String dadosbancarios = txtdadosbancariosAtualizarFunc.getText();
+                String beneficios = txtbeneficiosAtualizarFunc.getText();
+                String escolaridade = txtescolaridadeAtualizarFunc.getText();
+                String contrato = txtcontratoAtualizarFunc.getText();
+                String horario = txthorarioAtualizarFunc.getText();
+                String acidentes = txtacidentesAtualizarFunc.getText();
+                String advertencias = txtadvertenciasAtualizarFunc.getText();
+              
+    
+    
+                try (Connection connection = Database.getConnection();
+                 PreparedStatement statement = connection.prepareStatement("UPDATE DadoProfissional SET cargo = ?, departamento = ?, funcao = ?,maquinas = ?, salario = ?, dadosbancarios = ?, beneficios = ?, escolaridade = ?, contrato = ?, horario = ?, acidentes = ?, advertencias = ?  WHERE id = ?")) {
+               
+                    statement.setString(1, cargo);
+                    statement.setString(2, departamento);
+                    statement.setString(3, funcao);
+                    statement.setString(4, maquinas);
+                    statement.setString(5, salario);
+                    statement.setString(6, dadosbancarios);
+                    statement.setString(7, beneficios);
+                    statement.setString(8, escolaridade);
+                    statement.setString(9, contrato);
+                    statement.setString(10, horario);
+                    statement.setString(11, acidentes);
+                    statement.setString(12, advertencias);
+                    statement.executeUpdate();
+                    carregarDadoProfissional();
+                    mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário atualizado com sucesso!");
+                } catch (SQLException e) {
+                    mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao atualizar funcionário: " + e.getMessage());
+                }
+            }
+
+        @FXML
         private void limparCamposAtualizacao() {
             txtIdAtualizarFunc.clear();
             txtEstadoCivilAtualizarFunc.clear();
@@ -303,7 +373,25 @@ private void salvarDadoPessoal() {
             txtContatoEmergenciaAtualizarFunc.clear();
 
             tabPaneDadoPessoal.getSelectionModel().select(tabListarDadoPessoal);
+        
+       
+           
+            txtcargoAtualizarFunc.clear();
+            txtdepartamentoAtualizarFunc.clear();
+            txtfuncaoAtualizarFunc.clear();
+            txtmaquinasAtualizarFunc.clear();
+            txtsalarioAtualizarFunc.clear();
+            txtdadosbancariosAtualizarFunc.clear();
+            txtbeneficiosAtualizarFunc.clear();
+            txtescolaridadeAtualizarFunc.clear();
+            txtcontratoAtualizarFunc.clear();
+            txthorarioAtualizarFunc.clear();
+            txtacidentesAtualizarFunc.clear();
+            txtadvertenciasAtualizarFunc.clear();
+
+            tabPaneDadoProfissional.getSelectionModel().select(tabListarDadoProfissional);
         }
+    
     
         private void preencherCamposAtualizacao() {
             DadoPessoal dadopessoalSelecionado = tableDadoPessoal.getSelectionModel().getSelectedItem();
@@ -321,6 +409,31 @@ private void salvarDadoPessoal() {
             }
         }
     
+
+        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
+        if (DadoProfissionalSelecionado!= null) {
+            
+            txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
+            txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
+            txtfuncaoAtualizarFunc.setText(DadoProfissionalSelecionado.getFuncao());
+            txtmaquinasAtualizarFunc.setText(DadoProfissionalSelecionado.getMaquina_opera());
+;               txtsalarioAtualizarFunc.setText(DadoProfissionalSelecionado.getSalario());
+            txtdadosbancariosAtualizarFunc.setText(DadoProfissionalSelecionado.getDados_bancarios());
+            txtbeneficiosAtualizarFunc.setText(DadoProfissionalSelecionado.getBeneficios());
+            txtescolaridadeAtualizarFunc.setText(DadoProfissionalSelecionado.getEscolaridade());
+            txtcontratoAtualizarFunc.setText(DadoProfissionalSelecionado.getContrato());
+;               txthorarioAtualizarFunc.setText(DadoProfissionalSelecionado.getHorario_trabalho());
+            txtacidentesAtualizarFunc.setText(DadoProfissionalSelecionado.getAcidentes());
+            txtadvertenciasAtualizarFunc.setText(DadoProfissionalSelecionado.getAdvertencia());
+
+
+
+
+            tabPaneDadoProfissional.getSelectionModel().select(tabAtualizarDadoProfissional);
+        }
+    }
+
+
 
 
         private void carregarDadoPessoal() {
@@ -417,6 +530,8 @@ private void salvarDadoPessoal() {
 
         tableDadoPessoal.setItems(dadosFiltrados);
         }
+
+
     
     @FXML
     public void limparFiltro() {
@@ -440,7 +555,66 @@ private void salvarDadoPessoal() {
         tableDadoPessoal.setItems(listaDadoPessoal);
     }
 
+@FXML
+    public void filtrarDadoProfissional() {
+        FilteredList<DadoProfissional> dadosFiltrados = new FilteredList<>(listaDadoProfissional, p -> true);
 
+        dadosFiltrados.setPredicate(DadoProfissional -> {
+            if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargo().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrodepartamentoFunc.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamentoFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrofuncaoFunc.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncaoFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtromaquinasFunc.getText().isEmpty() && !DadoProfissional.getMaquina_opera().toLowerCase().contains(filtromaquinasFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtroadmissaoFunc.getText().isEmpty() && !DadoProfissional.getAdmissao().toLowerCase().contains(filtroadmissaoFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrosalarioFunc.getText().isEmpty() && !DadoProfissional.getSalario().toLowerCase().contains(filtrosalarioFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrodadosbancariosFunc.getText().isEmpty() && !DadoProfissional.getDados_bancarios().toLowerCase().contains(filtrodadosbancariosFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrobeneficiosFunc.getText().isEmpty() && !DadoProfissional.getBeneficios().toLowerCase().contains(filtrobeneficiosFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtroescolaridadeFunc.getText().isEmpty() && !DadoProfissional.getEscolaridade().toLowerCase().contains(filtroescolaridadeFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtroctpsFunc.getText().isEmpty() && !DadoProfissional.getCtps().toLowerCase().contains(filtroctpsFunc.getText().toLowerCase())) {
+                return false;
+            }
+
+            if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasep().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
+                return false;
+            }
+                
+            if (!filtrocontratoFunc.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontratoFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtrohorarioFunc.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorarioFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtroacidentesFunc.getText().isEmpty() && !DadoProfissional.getAcidentes().toLowerCase().contains(filtroacidentesFunc.getText().toLowerCase())) {
+                return false;
+            }
+            if (!filtroadvertenciasFunc.getText().isEmpty() && !DadoProfissional.getAdvertencia().toLowerCase().contains(filtroadvertenciasFunc.getText().toLowerCase())) {
+                return false;
+            }
+            
+
+            return true;
+        });
+
+        tableDadoProfissional.setItems(dadosFiltrados);
+    }
+    
     @FXML
     public void excluirDadoPessoal(){
         DadoPessoal dadoPessoalSelecionado = tableDadoPessoal.getSelectionModel().getSelectedItem();
