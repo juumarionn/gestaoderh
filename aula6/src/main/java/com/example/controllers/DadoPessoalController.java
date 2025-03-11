@@ -397,20 +397,20 @@ private void salvarDadoProfissional() {
             DadoPessoal dadopessoalSelecionado = tableDadoPessoal.getSelectionModel().getSelectedItem();
             if (dadopessoalSelecionado!= null) {
                 txtIdAtualizarFunc.setText(String.valueOf(dadopessoalSelecionado.getId()));
-                txtEstadoCivilAtualizarFunc.setText(dadopessoalSelecionado.getEstadoCivil());
+                txtEstadoCivilAtualizarFunc.setText(dadopessoalSelecionado.getEstado_civil());
                 txtConjugeAtualizarFunc.setText(dadopessoalSelecionado.getConjuge());
                 txtDependentesAtualizarFunc.setText(dadopessoalSelecionado.getDependentes());
                 txtEnderecoAtualizarFunc.setText(dadopessoalSelecionado.getEndereco());
 ;               txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
                 txtEmailAtualizarFunc.setText(dadopessoalSelecionado.getEmail());
-                txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContatoEmergencia());
+                txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContato_emergencia());
 
                 tabPaneDadoPessoal.getSelectionModel().select(tabAtualizarDadoPessoal);
             }
         }
     
 
-        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem(){
+        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();{
         if (DadoProfissionalSelecionado!= null) {
             
             txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
@@ -467,8 +467,7 @@ private void salvarDadoProfissional() {
             mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao carregar funcionários: " + e.getMessage());
     }
 }
-        @FXML
-    public void filtrarDadopessoal() {
+        @FXML public void filtrarDadopessoal() {
         FilteredList<DadoPessoal> dadosFiltrados = new FilteredList<>(listaDadoPessoal, p -> true);
 
         dadosFiltrados.setPredicate(dadopessoal -> {
