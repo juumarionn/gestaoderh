@@ -105,7 +105,7 @@ public class DadoPessoalController {
     @FXML private TableColumn<DadoPessoal, String> colContato_EmergenciaFunc;
 
     @FXML private TableView<DadoProfissional> tableDadoProfissional;
-    @FXML private TableColumn<DadoProfissional, String> colcargoFunc;
+    @FXML private TableColumn<DadoProfissional, String> colCargo;
     @FXML private TableColumn<DadoProfissional, String> coldepartamentoFunc;
     @FXML private TableColumn<DadoProfissional, String> colfuncaoFunc;
     @FXML private TableColumn<DadoProfissional, String> colmaquinasFunc;
@@ -195,7 +195,7 @@ public class DadoPessoalController {
 
         carregarDadoPessoal();
 
-        colcargoFunc.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+        colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
         coldepartamentoFunc.setCellValueFactory(new PropertyValueFactory<>("departamento"));
         colfuncaoFunc.setCellValueFactory(new PropertyValueFactory<>("funcao"));
         colmaquinasFunc.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
