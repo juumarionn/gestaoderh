@@ -401,40 +401,36 @@ private void salvarDadoProfissional() {
                 txtConjugeAtualizarFunc.setText(dadopessoalSelecionado.getConjuge());
                 txtDependentesAtualizarFunc.setText(dadopessoalSelecionado.getDependentes());
                 txtEnderecoAtualizarFunc.setText(dadopessoalSelecionado.getEndereco());
-;               txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
+              txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
                 txtEmailAtualizarFunc.setText(dadopessoalSelecionado.getEmail());
                 txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContato_emergencia());
 
                 tabPaneDadoPessoal.getSelectionModel().select(tabAtualizarDadoPessoal);
             }
-        }
     
 
-        DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();{
-        if (DadoProfissionalSelecionado!= null) {
-            
-            txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
-            txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
-            txtfuncaoAtualizarFunc.setText(DadoProfissionalSelecionado.getFuncao());
-            txtmaquinasAtualizarFunc.setText(DadoProfissionalSelecionado.getMaquina_opera());
-;               txtsalarioAtualizarFunc.setText(DadoProfissionalSelecionado.getSalario());
-            txtdadosbancariosAtualizarFunc.setText(DadoProfissionalSelecionado.getDados_bancarios());
-            txtbeneficiosAtualizarFunc.setText(DadoProfissionalSelecionado.getBeneficios());
-            txtescolaridadeAtualizarFunc.setText(DadoProfissionalSelecionado.getEscolaridade());
-            txtcontratoAtualizarFunc.setText(DadoProfissionalSelecionado.getContrato());
-;               txthorarioAtualizarFunc.setText(DadoProfissionalSelecionado.getHorario_trabalho());
-            txtacidentesAtualizarFunc.setText(DadoProfissionalSelecionado.getAcidentes());
-            txtadvertenciasAtualizarFunc.setText(DadoProfissionalSelecionado.getAdvertencia());
+            DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
+            if (DadoProfissionalSelecionado!= null) {
+                
+                txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
+                txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
+                txtfuncaoAtualizarFunc.setText(DadoProfissionalSelecionado.getFuncao());
+                txtmaquinasAtualizarFunc.setText(DadoProfissionalSelecionado.getMaquina_opera());
+                 txtsalarioAtualizarFunc.setText(DadoProfissionalSelecionado.getSalario());
+                txtdadosbancariosAtualizarFunc.setText(DadoProfissionalSelecionado.getDados_bancarios());
+                txtbeneficiosAtualizarFunc.setText(DadoProfissionalSelecionado.getBeneficios());
+                txtescolaridadeAtualizarFunc.setText(DadoProfissionalSelecionado.getEscolaridade());
+                txtcontratoAtualizarFunc.setText(DadoProfissionalSelecionado.getContrato());
+                txthorarioAtualizarFunc.setText(DadoProfissionalSelecionado.getHorario_trabalho());
+                txtacidentesAtualizarFunc.setText(DadoProfissionalSelecionado.getAcidentes());
+                txtadvertenciasAtualizarFunc.setText(DadoProfissionalSelecionado.getAdvertencia());
 
 
 
 
-            tabPaneDadoProfissional.getSelectionModel().select(tabAtualizarDadoProfissional);
-        
+                tabPaneDadoProfissional.getSelectionModel().select(tabAtualizarDadoProfissional);
+            }
     }
-
-
-
 
         private void carregarDadoPessoal() {
             listaDadoPessoal.clear();
@@ -452,35 +448,36 @@ private void salvarDadoProfissional() {
         }
     }
 
-    private void carregarDadoProfissional() {
-        listaDadoProfissional.clear();
-        try (Connection conn = Database.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM DadoProfissional")) {
+        private void carregarDadoProfissional() {
+                listaDadoProfissional.clear();
+                try (Connection conn = Database.getConnection();
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM DadoProfissional")) {
 
-            while (rs.next()) {
-                listaDadoProfissional.add(new DadoProfissional (rs.getInt("id"), rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
+                    while (rs.next()) {
+                        listaDadoProfissional.add(new DadoProfissional (rs.getInt("id"), rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
+                    }
+                    tableDadoProfissional.setItems(listaDadoProfissional);
+                } catch (SQLException e) {
+
+                    mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao carregar funcionários: " + e.getMessage());
             }
-            tableDadoProfissional.setItems(listaDadoProfissional);
-        } catch (SQLException e) {
+        }
 
-            mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao carregar funcionários: " + e.getMessage());
-    }
-}
         @FXML public void filtrarDadopessoal() {
         FilteredList<DadoPessoal> dadosFiltrados = new FilteredList<>(listaDadoPessoal, p -> true);
 
         dadosFiltrados.setPredicate(dadopessoal -> {
-            if (!filtroNomeFunc.getText().isEmpty() && !dadopessoal.getNome().toLowerCase().contains(filtroNomeFunc.getText().toLowerCase())) {
+            if (!filtroNomeFunc.getText().isEmpty() && !dadopessoal.getNome_completo().toLowerCase().contains(filtroNomeFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroDataNascimentoFunc.getText().isEmpty() && !dadopessoal.getDataNascimento().toLowerCase().contains(filtroDataNascimentoFunc.getText().toLowerCase())) {
+            if (!filtroDataNascimentoFunc.getText().isEmpty() && !dadopessoal.getData_nascimento().toLowerCase().contains(filtroDataNascimentoFunc.getText().toLowerCase())) {
                 return false;
             }
             if (!filtroSexoFunc.getText().isEmpty() && !dadopessoal.getSexo().toLowerCase().contains(filtroSexoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroEstadoCivilFunc.getText().isEmpty() && !dadopessoal.getEstadoCivil().toLowerCase().contains(filtroEstadoCivilFunc.getText().toLowerCase())) {
+            if (!filtroEstadoCivilFunc.getText().isEmpty() && !dadopessoal.getEstado_civil().toLowerCase().contains(filtroEstadoCivilFunc.getText().toLowerCase())) {
                 return false;
             }
             if (!filtroConjugeFunc.getText().isEmpty() && !dadopessoal.getConjuge().toLowerCase().contains(filtroConjugeFunc.getText().toLowerCase())) {
@@ -517,10 +514,10 @@ private void salvarDadoProfissional() {
             if (!filtroFiliacaoFunc.getText().isEmpty() && !dadopessoal.getFiliacao().toLowerCase().contains(filtroFiliacaoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroTipoSanguineoFunc.getText().isEmpty() && !dadopessoal.getTipoSanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getText().toLowerCase())) {
+            if (!filtroTipoSanguineoFunc.getText().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContatoEmergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
+            if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContato_emergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
                 return false;
             }
 
@@ -566,7 +563,7 @@ private void salvarDadoProfissional() {
                     return false;
                 }
     
-                if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasep().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
+                if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasesp().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
                     return false;
                 }
                     
@@ -631,8 +628,6 @@ private void salvarDadoProfissional() {
 
         tableDadoProfissional.setItems(listaDadoProfissional);
     }
-
-@FXML
     
     @FXML
     public void excluirDadoPessoal(){
@@ -653,22 +648,13 @@ private void salvarDadoProfissional() {
         }
     }
 
-    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensagem) {
-        Alert alerta = new Alert(tipo);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensagem);
-        alerta.showAndWait();
-    }
-}
-
-@FXML
+    @FXML
     public void excluirDadoProfissional(){
         DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
         if (DadoProfissionalSelecionado != null) {
             try (Connection conn = Database.getConnection();
                  PreparedStatement stmt = conn.prepareStatement("DELETE FROM DadoProfissional WHERE id = ?")) {
-                stmt.setInt(1, DadoProfissionalSelecionado.getId());
+                stmt.setInt(1, DadoProfissionalSelecionado.getIdprof());
                 stmt.executeUpdate();
                 carregarDadoProfissional();
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário excluído com sucesso!");
@@ -680,6 +666,7 @@ private void salvarDadoProfissional() {
             mostrarAlerta(Alert.AlertType.WARNING, "Atenção", "Selecione um funcionário para excluir!");
         }
     }
+
 
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensagem) {
         Alert alerta = new Alert(tipo);
