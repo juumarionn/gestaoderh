@@ -11,13 +11,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+
 import java.sql.*;
 
 public class DadoPessoalController {
     @FXML private TextField txtnome_completoFunc;
     @FXML private TextField txtdatanascimentoFunc;
-    @FXML private TextField txtsexoFunc;
-    @FXML private TextField txtestado_civilFunc;
+    @FXML private ComboBox<String> comboBoxSexo;
+    @FXML private ComboBox<String> comboBoxEstadoCivil;
     @FXML private TextField txtconjugeFunc;
     @FXML private TextField txtdependentesFunc;
     @FXML private TextField txtnacionalidadeFunc;
@@ -51,8 +52,8 @@ public class DadoPessoalController {
     @FXML private TextField txtIdAtualizarFunc;
     @FXML private TextField txtNomeAtualizarFunc;
     @FXML private TextField txtDataNascimentoAtualizarFunc;
-    @FXML private TextField txtSexoAtualizarFunc;
-    @FXML private TextField txtEstadoCivilAtualizarFunc;
+    @FXML private ComboBox<String>comboBoxSexoAtualizarFunc;
+    @FXML private ComboBox<String>comboBoxEstadoCivilAtualizarFunc;
     @FXML private TextField txtConjugeAtualizarFunc;
     @FXML private TextField txtDependentesAtualizarFunc;
     @FXML private TextField txtNacionalidadeAtualizarFunc;
@@ -125,8 +126,8 @@ public class DadoPessoalController {
 
     @FXML private TextField filtroNomeFunc;
     @FXML private TextField filtroDataNascimentoFunc;
-    @FXML private TextField filtroSexoFunc;
-    @FXML private TextField filtroEstadoCivilFunc;
+    @FXML private ComboBox<String>filtroSexoFunc;
+    @FXML private ComboBox<String>filtroEstadoCivilFunc;
     @FXML private TextField filtroConjugeFunc;
     @FXML private TextField filtroDependentesFunc;
     @FXML private TextField filtroNacionalidadeFunc;
@@ -193,6 +194,22 @@ public class DadoPessoalController {
         colTipo_SanguineoFunc.setCellValueFactory(new PropertyValueFactory<>("tipo_sanguineo"));
         colContato_EmergenciaFunc.setCellValueFactory(new PropertyValueFactory<>("contato_emergencia"));
 
+        ObservableList<String> estadosCivis = FXCollections.observableArrayList(
+                "Solteiro(a)",
+                "Casado(a)",
+                "Divorciado(a)",
+                "Viúvo(a)",
+                "Outro"
+        );
+        comboBoxEstadoCivil.setItems(estadosCivis);
+
+        ObservableList<String> sexos = FXCollections.observableArrayList(
+            "Masculino",
+            "Feminino",
+            "Outro"
+    );
+    comboBoxSexo.setItems(sexos);
+
         carregarDadoPessoal();
 
         colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
@@ -236,8 +253,8 @@ private void salvarDadoPessoal() {
          PreparedStatement stmt = conn.prepareStatement("INSERT INTO dadospessoais (nome_completo, data_nascimento, sexo, estado_civil, conjuge, dependentes, nacionalidade, naturalidade, cpf, rg, endereco, telefone, email, filiacao, tipo_sanguineo, contato_emergencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
             stmt.setString(1, txtnome_completoFunc.getText());
             stmt.setString(2, txtdatanascimentoFunc.getText());
-            stmt.setString(3, txtsexoFunc.getText());
-            stmt.setString(4, txtestado_civilFunc.getText());
+            stmt.setString(3, comboBoxSexo.getValue());
+            stmt.setString(4, comboBoxEstadoCivil.getValue());
             stmt.setString(5, txtconjugeFunc.getText());
             stmt.setString(6, txtdependentesFunc.getText());
             stmt.setString(7, txtnacionalidadeFunc.getText());
@@ -291,7 +308,7 @@ private void salvarDadoProfissional() {
     public void atualizarDadoPessoal() {
         
             int id = Integer.parseInt(txtIdAtualizarFunc.getText());
-            String estadoCivil = txtEstadoCivilAtualizarFunc.getText();
+            String estadoCivil = comboBoxEstadoCivilAtualizarFunc.getValue();
             String conjuge = txtConjugeAtualizarFunc.getText();
             String dependentes = txtDependentesAtualizarFunc.getText();
             String endereco = txtEnderecoAtualizarFunc.getText();
@@ -364,7 +381,7 @@ private void salvarDadoProfissional() {
         @FXML
         private void limparCamposAtualizacao() {
             txtIdAtualizarFunc.clear();
-            txtEstadoCivilAtualizarFunc.clear();
+            comboBoxEstadoCivilAtualizarFunc.setValue(null);
             txtConjugeAtualizarFunc.clear();
             txtDependentesAtualizarFunc.clear();
             txtEnderecoAtualizarFunc.clear();
@@ -397,11 +414,11 @@ private void salvarDadoProfissional() {
             DadoPessoal dadopessoalSelecionado = tableDadoPessoal.getSelectionModel().getSelectedItem();
             if (dadopessoalSelecionado!= null) {
                 txtIdAtualizarFunc.setText(String.valueOf(dadopessoalSelecionado.getId()));
-                txtEstadoCivilAtualizarFunc.setText(dadopessoalSelecionado.getEstado_civil());
+                comboBoxEstadoCivilAtualizarFunc.setValue(dadopessoalSelecionado.getEstado_civil());
                 txtConjugeAtualizarFunc.setText(dadopessoalSelecionado.getConjuge());
                 txtDependentesAtualizarFunc.setText(dadopessoalSelecionado.getDependentes());
                 txtEnderecoAtualizarFunc.setText(dadopessoalSelecionado.getEndereco());
-              txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
+                txtTelefoneAtualizarFunc.setText(dadopessoalSelecionado.getTelefone());
                 txtEmailAtualizarFunc.setText(dadopessoalSelecionado.getEmail());
                 txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContato_emergencia());
 
@@ -474,10 +491,10 @@ private void salvarDadoProfissional() {
             if (!filtroDataNascimentoFunc.getText().isEmpty() && !dadopessoal.getData_nascimento().toLowerCase().contains(filtroDataNascimentoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroSexoFunc.getText().isEmpty() && !dadopessoal.getSexo().toLowerCase().contains(filtroSexoFunc.getText().toLowerCase())) {
+            if (!filtroSexoFunc.getValue().isEmpty() && !dadopessoal.getSexo().toLowerCase().contains(filtroSexoFunc.getValue().toLowerCase())) {
                 return false;
             }
-            if (!filtroEstadoCivilFunc.getText().isEmpty() && !dadopessoal.getEstado_civil().toLowerCase().contains(filtroEstadoCivilFunc.getText().toLowerCase())) {
+            if (!filtroEstadoCivilFunc.getValue().isEmpty() && !dadopessoal.getEstado_civil().toLowerCase().contains(filtroEstadoCivilFunc.getValue().toLowerCase())) {
                 return false;
             }
             if (!filtroConjugeFunc.getText().isEmpty() && !dadopessoal.getConjuge().toLowerCase().contains(filtroConjugeFunc.getText().toLowerCase())) {
@@ -592,8 +609,8 @@ private void salvarDadoProfissional() {
     public void limparFiltro() {
         filtroNomeFunc.clear();
         filtroDataNascimentoFunc.clear();
-        filtroSexoFunc.clear();
-        filtroEstadoCivilFunc.clear();
+        filtroSexoFunc.setValue(null);
+        filtroEstadoCivilFunc.setValue(null);
         filtroConjugeFunc.clear();
         filtroDependentesFunc.clear();
         filtroNacionalidadeFunc.clear();

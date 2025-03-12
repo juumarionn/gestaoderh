@@ -37,8 +37,8 @@
                         <TextField fx:id="txtnome_completoFunc" layoutX="61.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nome Completo" />
                         <TextField fx:id="txtdatanascimentoFunc" layoutX="61.0" layoutY="121.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Data de nascimento" />
                         <TextField fx:id="txtconjugeFunc" layoutX="60.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Conjuge (Nome e data de Nascimento)" />
-                        <TextField fx:id="txtestado_civilFunc" layoutX="60.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Estado Civil" />
-                        <TextField fx:id="txtsexoFunc" layoutX="60.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Sexo" />
+                        <ComboBox fx:id="comboBoxEstadoCivil" layoutX="60.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Estado Civil" />
+                        <ComboBox fx:id="comboBoxSexo" layoutX="60.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Sexo" />
                         <Label layoutX="61.0" layoutY="53.0" text="Nome Completo" />
                         <Label layoutX="61.0" layoutY="104.0" text="Data de nascimento" />
                         <Label layoutX="61.0" layoutY="153.0" text="Sexo" />
@@ -195,8 +195,8 @@
                         <TextField id="textNomeAtual" fx:id="txtNomeAtualizar" editable="false" layoutX="54.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nome Completo" />
                         <TextField id="textDataNascimentoAtual" fx:id="txtDataNascimentoAtualizar" editable="false" layoutX="54.0" layoutY="171.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Data de nascimento" />
                         <TextField id="textConjugeAtual" fx:id="txtConjugeAtualizar" layoutX="55.0" layoutY="317.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Conjuge (Nome e data de Nascimento)" />
-                        <TextField id="textEstadoCivilAtual" fx:id="txtEstadoCivilAtualizar" layoutX="54.0" layoutY="263.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Estado Civil" />
-                        <TextField id="textSexoAtual" fx:id="txtSexoAtualizar" editable="false" layoutX="54.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Sexo" />
+                        <ComboBox fx:id="comboBoxEstadoCivil" fx:id="txtEstadoCivilAtualizar" layoutX="54.0" layoutY="263.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Estado Civil" />
+                        <ComboBox fx:id="comboBoxSexo" fx:id="txtSexoAtualizar" editable="false" layoutX="54.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="440.0" promptText="Sexo" />
                         <Label layoutX="61.0" layoutY="103.0" text="Nome Completo" />
                         <Label layoutX="61.0" layoutY="153.0" text="Data de nascimento" />
                         <Label layoutX="61.0" layoutY="197.0" text="Sexo" />
