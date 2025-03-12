@@ -319,7 +319,7 @@ private void salvarDadoProfissional() {
             }
         }
 
-        @FXMLa
+        @FXML
         public void atualizarDadoProfissional() {
             
                 
