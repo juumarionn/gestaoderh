@@ -412,7 +412,7 @@ private void salvarDadoProfissional() {
             DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
             if (DadoProfissionalSelecionado!= null) {
                 
-                txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargo());
+                txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargoFunc());
                 txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
                 txtfuncaoAtualizarFunc.setText(DadoProfissionalSelecionado.getFuncao());
                 txtmaquinasAtualizarFunc.setText(DadoProfissionalSelecionado.getMaquina_opera());
@@ -525,14 +525,14 @@ private void salvarDadoProfissional() {
         });
 
         tableDadoPessoal.setItems(dadosFiltrados);
-        }
+    }
 
         @FXML
         public void filtrarDadoProfissional() {
             FilteredList<DadoProfissional> dadosFiltrados = new FilteredList<>(listaDadoProfissional, p -> true);
     
             dadosFiltrados.setPredicate(DadoProfissional -> {
-                if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargo().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
+                if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargoFunc().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
                     return false;
                 }
                 if (!filtrodepartamentoFunc.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamentoFunc.getText().toLowerCase())) {

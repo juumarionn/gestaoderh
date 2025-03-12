@@ -194,7 +194,8 @@ private void salvarDadoProfissional() {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao atualizar funcionário: " + e.getMessage());
             }
         }
-@FXML
+        
+        @FXML
         private void limparCamposAtualizacao() {
            
             txtcargoAtualizarFunc.clear();

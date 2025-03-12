@@ -46,10 +46,11 @@ public void setIdprof(int idprof){
     this.idprof = idprof;
 }
 
-public String getCargo() {
+public String getCargoFunc() {
     return cargo;
 }
-public void setCargo(String cargo){
+
+public void setCargoFunc(String cargo){
     this.cargo = cargo;
 }
 

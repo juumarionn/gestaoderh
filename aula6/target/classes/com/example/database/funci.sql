@@ -49,3 +49,5 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   UNIQUE INDEX `ctps_UNIQUE` (`ctps` ASC),
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
+
+SELECT * FROM dadospessoais INNER JOIN dadosprofissionais ON  dados_pessoais = id;
