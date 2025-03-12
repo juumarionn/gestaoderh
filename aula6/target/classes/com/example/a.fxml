@@ -118,11 +118,11 @@
                                        <children>
                                           <TableView fx:id="tableDadoPessoal" layoutX="6.0" prefHeight="599.0" prefWidth="1233.0">
                                             <columns>
-                                                <TableColumn fx:id="colIdFunc" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
                                               <TableColumn id="colNome" fx:id="colNomeFunc" prefWidth="51.0" text="Nome" />
-                                              <TableColumn id="colDataNascimento" fx:id="colDataNascimentoFunc" prefWidth="119.0" text="Data de Nascimento" />
+                                              <TableColumn id="colData_Nascimento" fx:id="colDataNascimentoFunc" prefWidth="119.0" text="Data de Nascimento" />
                                                 <TableColumn id="colSexo" fx:id="colSexoFunc" prefWidth="39.0" text="Sexo" />
-                                                <TableColumn id="colEstadoCivil" fx:id="colEstado_CivilFunc" prefWidth="70.0" text="Estado Civil" />
+                                                <TableColumn id="colEstado_Civil" fx:id="colEstado_CivilFunc" prefWidth="70.0" text="Estado Civil" />
                                                 <TableColumn id="colConjuge" fx:id="colConjugeFunc" prefWidth="53.0" text="Conjuge" />
                                                 <TableColumn id="colDependentes" fx:id="colDependentesFunc" prefWidth="85.0" text="Dependentes" />
                                                 <TableColumn id="colNacionalidade" fx:id="colNacionalidadeFunc" prefWidth="92.0" text="Nacionalidade" />
@@ -132,9 +132,9 @@
                                                 <TableColumn id="colEndereço" fx:id="colEnderecoFunc" prefWidth="65.0" text="Endereço" />
                                                 <TableColumn id="colTelefone" fx:id="colTelefoneFunc" prefWidth="67.0" text="Telefone" />
                                                 <TableColumn id="colEmail" fx:id="colEmailFunc" prefWidth="55.0" text="Email" />
-                                                <TableColumn id="colFiliação" fx:id="colFiliacaoFunc" prefWidth="71.0" text="Filiação" />
-                                                <TableColumn id="colTipoSanguineo" fx:id="colTipo_SanguineoFunc" prefWidth="98.0" text="Tipo Sanguineo" />
-                                                <TableColumn id="colContatoEmergência" fx:id="colContato_EmergenciaFunc" prefWidth="125.0" text="Contato Emergência" />
+                                                <TableColumn id="colFiliaçao" fx:id="colFiliacaoFunc" prefWidth="71.0" text="Filiação" />
+                                                <TableColumn id="colTipo_Sanguineo" fx:id="colTipo_SanguineoFunc" prefWidth="98.0" text="Tipo Sanguineo" />
+                                                <TableColumn id="colContato_Emergencia" fx:id="colContato_EmergenciaFunc" prefWidth="125.0" text="Contato Emergência" />
                                             </columns>
                                           </TableView>
                                        </children>
@@ -150,19 +150,19 @@
                                                 <TableColumn prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" prefWidth="50.0" text="Cargo" />
                                               <TableColumn id="colDepartamento" prefWidth="92.0" text="Departamento" />
-                                                <TableColumn id="colFunção" prefWidth="47.0" text="Função" />
-                                                <TableColumn id="colMáquinas" prefWidth="101.0" text="Máquinas opera" />
-                                                <TableColumn id="colDataAdmissão" prefWidth="97.0" text="Data Admissão" />
-                                                <TableColumn id="colSalário" prefWidth="50.0" text="Salário" />
-                                                <TableColumn id="colDadosBancários" prefWidth="103.0" text="Dados Bancários" />
-                                                <TableColumn id="colBenefícios" prefWidth="70.0" text="Benefícios" />
+                                                <TableColumn id="colFuncao" prefWidth="47.0" text="Função" />
+                                                <TableColumn id="colMaquinas" prefWidth="101.0" text="Máquinas opera" />
+                                                <TableColumn id="colDataAdmissao" prefWidth="97.0" text="Data Admissão" />
+                                                <TableColumn id="colSalario" prefWidth="50.0" text="Salário" />
+                                                <TableColumn id="colDadosBancarios" prefWidth="103.0" text="Dados Bancários" />
+                                                <TableColumn id="colBeneficios" prefWidth="70.0" text="Benefícios" />
                                                 <TableColumn id="colEscolaridade" text="Escolaridade" />
                                                 <TableColumn id="colCtps" prefWidth="46.0" text="CTPS" />
                                                 <TableColumn id="colPisPasep" prefWidth="62.0" text="PIS/Pasep" />
                                                 <TableColumn id="colContrato" prefWidth="62.0" text="Contrato" />
-                                                <TableColumn id="colHorário" prefWidth="125.0" text="Horário de Trabalho" />
+                                                <TableColumn id="colHorario" prefWidth="125.0" text="Horário de Trabalho" />
                                                 <TableColumn id="colAcidente" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
-                                                <TableColumn prefWidth="84.3333740234375" text="Advertência" />
+                                                <TableColumn prefWidth="84.3333740234375" text="Advertencia" />
                                             </columns>
                                           </TableView>
                                        </children>
