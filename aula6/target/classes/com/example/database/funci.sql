@@ -50,4 +50,12 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
 
+<<<<<<< Updated upstream
 SELECT * FROM dadospessoais INNER JOIN dadosprofissionais ON  dados_pessoais = id;
+=======
+SELECT DATE_FORMAT(data_nascimento, '%d/%m/%Y') AS data_nascimento_br
+FROM dadospessoais;
+
+SELECT DATE_FORMAT(admissao, '%d/%m/%Y') AS admissao_br
+FROM dadosprofissionais;
+>>>>>>> Stashed changes
