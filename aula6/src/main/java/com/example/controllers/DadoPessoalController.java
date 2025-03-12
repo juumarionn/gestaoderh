@@ -31,21 +31,21 @@ public class DadoPessoalController {
     @FXML private TextField txttipo_sanguineoFunc;
     @FXML private TextField txtcontato_emergenciaFunc;
 
-    @FXML private TextField txtcargoFunc;
-    @FXML private TextField txtdepartamentoFunc;
-    @FXML private TextField txtfuncaoFunc;
-    @FXML private TextField txtmaquinasFunc;
-    @FXML private TextField txtadmissaoFunc;
-    @FXML private TextField txtsalarioFunc;
-    @FXML private TextField txtdadosbancariosFunc;
-    @FXML private TextField txtbeneficiosFunc;
-    @FXML private TextField txtescolaridadeFunc;
-    @FXML private TextField txtctpsFunc;
-    @FXML private TextField txtpisFunc;
-    @FXML private TextField txtcontratoFunc;
-    @FXML private TextField txthorarioFunc;
-    @FXML private TextField txtacidentesFunc;
-    @FXML private TextField txtadvertenciasFunc;
+    @FXML private TextField txtcargo;
+    @FXML private TextField txtdepartamento;
+    @FXML private TextField txtfuncao;
+    @FXML private TextField txtmaquinas;
+    @FXML private TextField txtadmissao;
+    @FXML private TextField txtsalario;
+    @FXML private TextField txtdadosbancarios;
+    @FXML private TextField txtbeneficios;
+    @FXML private TextField txtescolaridade;
+    @FXML private TextField txtctps;
+    @FXML private TextField txtpis;
+    @FXML private TextField txtcontrato;
+    @FXML private TextField txthorario;
+    @FXML private TextField txtacidentes;
+    @FXML private TextField txtadvertencias;
 
 
     @FXML private TextField txtIdAtualizarFunc;
@@ -106,20 +106,20 @@ public class DadoPessoalController {
 
     @FXML private TableView<DadoProfissional> tableDadoProfissional;
     @FXML private TableColumn<DadoProfissional, String> colCargo;
-    @FXML private TableColumn<DadoProfissional, String> coldepartamentoFunc;
-    @FXML private TableColumn<DadoProfissional, String> colfuncaoFunc;
-    @FXML private TableColumn<DadoProfissional, String> colmaquinasFunc;
-    @FXML private TableColumn<DadoProfissional, String> coladmissaoFunc;
-    @FXML private TableColumn<DadoProfissional, String> colsalarioFunc;
-    @FXML private TableColumn<DadoProfissional, String> coldadosbancariosFunc;
-    @FXML private TableColumn<DadoProfissional, String> colbeneficiosFunc;
-    @FXML private TableColumn<DadoProfissional, String> colescolaridadeFunc;
-    @FXML private TableColumn<DadoProfissional, String> colctpsFunc;
-    @FXML private TableColumn<DadoProfissional, String> colpisFunc;
-    @FXML private TableColumn<DadoProfissional, String> colcontratoFunc;
-    @FXML private TableColumn<DadoProfissional, String> colhorarioFunc;
-    @FXML private TableColumn<DadoProfissional, String> colacidentesFunc;
-    @FXML private TableColumn<DadoProfissional, String> coladvertenciasFunc;
+    @FXML private TableColumn<DadoProfissional, String> coldepartamento;
+    @FXML private TableColumn<DadoProfissional, String> colfuncao;
+    @FXML private TableColumn<DadoProfissional, String> colmaquinas;
+    @FXML private TableColumn<DadoProfissional, String> coladmissao;
+    @FXML private TableColumn<DadoProfissional, String> colsalario;
+    @FXML private TableColumn<DadoProfissional, String> coldadosbancarios;
+    @FXML private TableColumn<DadoProfissional, String> colbeneficios;
+    @FXML private TableColumn<DadoProfissional, String> colescolaridade;
+    @FXML private TableColumn<DadoProfissional, String> colctps;
+    @FXML private TableColumn<DadoProfissional, String> colpis;
+    @FXML private TableColumn<DadoProfissional, String> colcontrato;
+    @FXML private TableColumn<DadoProfissional, String> colhorario;
+    @FXML private TableColumn<DadoProfissional, String> colacidentes;
+    @FXML private TableColumn<DadoProfissional, String> coladvertencias;
    
 
 
@@ -140,21 +140,21 @@ public class DadoPessoalController {
     @FXML private TextField filtroTipoSanguineoFunc;
     @FXML private TextField filtroContatoEmergenciaFunc;
 
-    @FXML private TextField filtrocargoFunc;
-    @FXML private TextField filtrodepartamentoFunc;
-    @FXML private TextField filtrofuncaoFunc;
-    @FXML private TextField filtromaquinasFunc;
-    @FXML private TextField filtroadmissaoFunc;
-    @FXML private TextField filtrosalarioFunc;
-    @FXML private TextField filtrodadosbancariosFunc;
-    @FXML private TextField filtrobeneficiosFunc;
-    @FXML private TextField filtroescolaridadeFunc;
-    @FXML private TextField filtroctpsFunc;
-    @FXML private TextField filtropisFunc;
-    @FXML private TextField filtrocontratoFunc;
-    @FXML private TextField filtrohorarioFunc;
-    @FXML private TextField filtroacidentesFunc;
-    @FXML private TextField filtroadvertenciasFunc;
+    @FXML private TextField filtrocargo;
+    @FXML private TextField filtrodepartamento;
+    @FXML private TextField filtrofuncao;
+    @FXML private TextField filtromaquinas;
+    @FXML private TextField filtroadmissao;
+    @FXML private TextField filtrosalario;
+    @FXML private TextField filtrodadosbancarios;
+    @FXML private TextField filtrobeneficios;
+    @FXML private TextField filtroescolaridade;
+    @FXML private TextField filtroctps;
+    @FXML private TextField filtropis;
+    @FXML private TextField filtrocontrato;
+    @FXML private TextField filtrohorario;
+    @FXML private TextField filtroacidentes;
+    @FXML private TextField filtroadvertencias;
 
 
 
@@ -196,20 +196,20 @@ public class DadoPessoalController {
         carregarDadoPessoal();
 
         colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
-        coldepartamentoFunc.setCellValueFactory(new PropertyValueFactory<>("departamento"));
-        colfuncaoFunc.setCellValueFactory(new PropertyValueFactory<>("funcao"));
-        colmaquinasFunc.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
-        coladmissaoFunc.setCellValueFactory(new PropertyValueFactory<>("admissao"));
-        colsalarioFunc.setCellValueFactory(new PropertyValueFactory<>("salario"));
-        coldadosbancariosFunc.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
-        colbeneficiosFunc.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
-        colescolaridadeFunc.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
-        colctpsFunc.setCellValueFactory(new PropertyValueFactory<>("ctps"));
-        colpisFunc.setCellValueFactory(new PropertyValueFactory<>("pis"));
-        colcontratoFunc.setCellValueFactory(new PropertyValueFactory<>("contrato"));
-        colhorarioFunc.setCellValueFactory(new PropertyValueFactory<>("horario"));
-        colacidentesFunc.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
-        coladvertenciasFunc.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
+        coldepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
+        colfuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));
+        colmaquinas.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
+        coladmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
+        colsalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
+        coldadosbancarios.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
+        colbeneficios.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
+        colescolaridade.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
+        colctps.setCellValueFactory(new PropertyValueFactory<>("ctps"));
+        colpis.setCellValueFactory(new PropertyValueFactory<>("pis"));
+        colcontrato.setCellValueFactory(new PropertyValueFactory<>("contrato"));
+        colhorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colacidentes.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
+        coladvertencias.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
         
 
         carregarDadoProfissional();
@@ -263,21 +263,21 @@ private void salvarDadoPessoal() {
 private void salvarDadoProfissional() {
     try (Connection conn = Database.getConnection();
          PreparedStatement stmt = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-            stmt.setString(1, txtcargoFunc.getText());
-            stmt.setString(2, txtdepartamentoFunc.getText());
-            stmt.setString(3, txtfuncaoFunc.getText());
-            stmt.setString(4, txtmaquinasFunc.getText());
-            stmt.setString(5, txtadmissaoFunc.getText());
-            stmt.setString(6, txtsalarioFunc.getText());
-            stmt.setString(7, txtdadosbancariosFunc.getText());
-            stmt.setString(8, txtbeneficiosFunc.getText());
-            stmt.setString(9, txtescolaridadeFunc.getText());
-            stmt.setString(10, txtctpsFunc.getText());
-            stmt.setString(11, txtpisFunc.getText());
-            stmt.setString(12, txtcontratoFunc.getText());
-            stmt.setString(13, txthorarioFunc.getText());
-            stmt.setString(14, txtacidentesFunc.getText());
-            stmt.setString(15, txtadvertenciasFunc.getText());
+            stmt.setString(1, txtcargo.getText());
+            stmt.setString(2, txtdepartamento.getText());
+            stmt.setString(3, txtfuncao.getText());
+            stmt.setString(4, txtmaquinas.getText());
+            stmt.setString(5, txtadmissao.getText());
+            stmt.setString(6, txtsalario.getText());
+            stmt.setString(7, txtdadosbancarios.getText());
+            stmt.setString(8, txtbeneficios.getText());
+            stmt.setString(9, txtescolaridade.getText());
+            stmt.setString(10, txtctps.getText());
+            stmt.setString(11, txtpis.getText());
+            stmt.setString(12, txtcontrato.getText());
+            stmt.setString(13, txthorario.getText());
+            stmt.setString(14, txtacidentes.getText());
+            stmt.setString(15, txtadvertencias.getText());
             stmt.executeUpdate();
             carregarDadoProfissional();
 
@@ -532,51 +532,51 @@ private void salvarDadoProfissional() {
             FilteredList<DadoProfissional> dadosFiltrados = new FilteredList<>(listaDadoProfissional, p -> true);
     
             dadosFiltrados.setPredicate(DadoProfissional -> {
-                if (!filtrocargoFunc.getText().isEmpty() && !DadoProfissional.getCargoFunc().toLowerCase().contains(filtrocargoFunc.getText().toLowerCase())) {
+                if (!filtrocargo.getText().isEmpty() && !DadoProfissional.getCargoFunc().toLowerCase().contains(filtrocargo.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrodepartamentoFunc.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamentoFunc.getText().toLowerCase())) {
+                if (!filtrodepartamento.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamento.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrofuncaoFunc.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncaoFunc.getText().toLowerCase())) {
+                if (!filtrofuncao.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncao.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtromaquinasFunc.getText().isEmpty() && !DadoProfissional.getMaquina_opera().toLowerCase().contains(filtromaquinasFunc.getText().toLowerCase())) {
+                if (!filtromaquinas.getText().isEmpty() && !DadoProfissional.getMaquina_opera().toLowerCase().contains(filtromaquinas.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtroadmissaoFunc.getText().isEmpty() && !DadoProfissional.getAdmissao().toLowerCase().contains(filtroadmissaoFunc.getText().toLowerCase())) {
+                if (!filtroadmissao.getText().isEmpty() && !DadoProfissional.getAdmissao().toLowerCase().contains(filtroadmissao.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrosalarioFunc.getText().isEmpty() && !DadoProfissional.getSalario().toLowerCase().contains(filtrosalarioFunc.getText().toLowerCase())) {
+                if (!filtrosalario.getText().isEmpty() && !DadoProfissional.getSalario().toLowerCase().contains(filtrosalario.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrodadosbancariosFunc.getText().isEmpty() && !DadoProfissional.getDados_bancarios().toLowerCase().contains(filtrodadosbancariosFunc.getText().toLowerCase())) {
+                if (!filtrodadosbancarios.getText().isEmpty() && !DadoProfissional.getDados_bancarios().toLowerCase().contains(filtrodadosbancarios.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrobeneficiosFunc.getText().isEmpty() && !DadoProfissional.getBeneficios().toLowerCase().contains(filtrobeneficiosFunc.getText().toLowerCase())) {
+                if (!filtrobeneficios.getText().isEmpty() && !DadoProfissional.getBeneficios().toLowerCase().contains(filtrobeneficios.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtroescolaridadeFunc.getText().isEmpty() && !DadoProfissional.getEscolaridade().toLowerCase().contains(filtroescolaridadeFunc.getText().toLowerCase())) {
+                if (!filtroescolaridade.getText().isEmpty() && !DadoProfissional.getEscolaridade().toLowerCase().contains(filtroescolaridade.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtroctpsFunc.getText().isEmpty() && !DadoProfissional.getCtps().toLowerCase().contains(filtroctpsFunc.getText().toLowerCase())) {
+                if (!filtroctps.getText().isEmpty() && !DadoProfissional.getCtps().toLowerCase().contains(filtroctps.getText().toLowerCase())) {
                     return false;
                 }
     
-                if (!filtropisFunc.getText().isEmpty() && !DadoProfissional.getpis_pasesp().toLowerCase().contains(filtropisFunc.getText().toLowerCase())) {
+                if (!filtropis.getText().isEmpty() && !DadoProfissional.getpis_pasesp().toLowerCase().contains(filtropis.getText().toLowerCase())) {
                     return false;
                 }
                     
-                if (!filtrocontratoFunc.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontratoFunc.getText().toLowerCase())) {
+                if (!filtrocontrato.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontrato.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrohorarioFunc.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorarioFunc.getText().toLowerCase())) {
+                if (!filtrohorario.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorario.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtroacidentesFunc.getText().isEmpty() && !DadoProfissional.getAcidentes().toLowerCase().contains(filtroacidentesFunc.getText().toLowerCase())) {
+                if (!filtroacidentes.getText().isEmpty() && !DadoProfissional.getAcidentes().toLowerCase().contains(filtroacidentes.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtroadvertenciasFunc.getText().isEmpty() && !DadoProfissional.getAdvertencia().toLowerCase().contains(filtroadvertenciasFunc.getText().toLowerCase())) {
+                if (!filtroadvertencias.getText().isEmpty() && !DadoProfissional.getAdvertencia().toLowerCase().contains(filtroadvertencias.getText().toLowerCase())) {
                     return false;
                 }
                 
@@ -609,21 +609,21 @@ private void salvarDadoProfissional() {
 
         tableDadoPessoal.setItems(listaDadoPessoal);
 
-        filtrocargoFunc.clear();
-        filtrodepartamentoFunc.clear();
-        filtrofuncaoFunc.clear();
-        filtromaquinasFunc.clear();
-        filtroadmissaoFunc.clear();
-        filtrosalarioFunc.clear();
-        filtrodadosbancariosFunc.clear();
-        filtrobeneficiosFunc.clear();
-        filtroescolaridadeFunc.clear();
-        filtroctpsFunc.clear();
-        filtropisFunc.clear();
-        filtrocontratoFunc.clear();
-        filtrohorarioFunc.clear();
-        filtroacidentesFunc.clear();
-        filtroadvertenciasFunc.clear();
+        filtrocargo.clear();
+        filtrodepartamento.clear();
+        filtrofuncao.clear();
+        filtromaquinas.clear();
+        filtroadmissao.clear();
+        filtrosalario.clear();
+        filtrodadosbancarios.clear();
+        filtrobeneficios.clear();
+        filtroescolaridade.clear();
+        filtroctps.clear();
+        filtropis.clear();
+        filtrocontrato.clear();
+        filtrohorario.clear();
+        filtroacidentes.clear();
+        filtroadvertencias.clear();
        
 
         tableDadoProfissional.setItems(listaDadoProfissional);
