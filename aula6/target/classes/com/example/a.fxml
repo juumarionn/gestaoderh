@@ -147,7 +147,7 @@
                                        <children>
                                           <TableView layoutX="7.0" layoutY="-2.0" prefHeight="590.0" prefWidth="1232.0">
                                             <columns>
-                                                <TableColumn prefWidth="22.0" text="ID" />
+                                                <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" prefWidth="50.0" text="Cargo" />
                                               <TableColumn id="colDepartamento" prefWidth="92.0" text="Departamento" />
                                                 <TableColumn id="colFuncao" prefWidth="47.0" text="Função" />
