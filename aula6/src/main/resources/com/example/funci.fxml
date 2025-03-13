@@ -37,7 +37,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="876.0" layoutY="805.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="136.0" text="Cadastrar" textFill="#56830f" AnchorPane.leftAnchor="876.0" AnchorPane.rightAnchor="908.0">
+                                          <Button layoutX="876.0" layoutY="805.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="136.0" text="Cadastrar" textFill="#56830f" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="876.0" AnchorPane.rightAnchor="908.0" AnchorPane.topAnchor="805.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
@@ -47,7 +47,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <Label layoutX="409.0" layoutY="129.0" prefHeight="17.0" prefWidth="1493.0" text="Nome Completo" AnchorPane.bottomAnchor="893.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="-9.0">
+                                          <Label layoutX="409.0" layoutY="129.0" prefHeight="17.0" prefWidth="1493.0" text="Nome Completo" AnchorPane.bottomAnchor="893.0" AnchorPane.leftAnchor="412.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="133.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -142,7 +142,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <Label layoutX="1080.0" layoutY="348.0" text="Telefone" AnchorPane.rightAnchor="816.0">
+                                          <Label layoutX="1080.0" layoutY="348.0" text="Telefone" AnchorPane.rightAnchor="779.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -214,123 +214,123 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextField layoutX="220.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Cargo" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="408.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Cargo" AnchorPane.bottomAnchor="853.0" AnchorPane.leftAnchor="408.0" AnchorPane.topAnchor="174.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="229.0" layoutY="90.0" text="Cargo" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="229.0" layoutY="90.0" text="Cargo" AnchorPane.leftAnchor="412.0" AnchorPane.topAnchor="132.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Label layoutX="223.0" layoutY="139.0" text="Departamento" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="407.0" layoutY="208.0" text="Departamento" AnchorPane.leftAnchor="407.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="213.0" layoutY="161.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Departamento" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="406.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Departamento" AnchorPane.leftAnchor="406.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="206.0" layoutY="201.0" text="Descrição das funções" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="408.0" layoutY="271.0" text="Descrição das funções" AnchorPane.leftAnchor="408.0" AnchorPane.topAnchor="271.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="408.0" layoutY="231.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Descrição das funções" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="408.0" layoutY="309.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Descrição das funções" AnchorPane.leftAnchor="408.0" AnchorPane.topAnchor="309.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="368.0" layoutY="268.0" text="Máquinas que opera" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="406.0" layoutY="353.0" text="Máquinas que opera" AnchorPane.leftAnchor="406.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="220.0" layoutY="293.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Máquinas que opera" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="407.0" layoutY="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Máquinas que opera" AnchorPane.leftAnchor="407.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="218.0" layoutY="318.0" text="Data de admissão" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="410.0" layoutY="429.0" text="Data de admissão" AnchorPane.leftAnchor="410.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="213.0" layoutY="333.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Data de admissão" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="408.0" layoutY="467.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Data de admissão" AnchorPane.leftAnchor="408.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="261.0" layoutY="365.0" text="Salário" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="410.0" layoutY="507.0" text="Salário" AnchorPane.leftAnchor="410.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="220.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Salário" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="407.0" layoutY="538.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Salário" AnchorPane.leftAnchor="407.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <TextField layoutX="220.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="406.0" layoutY="621.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="406.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="220.0" layoutY="479.0" text="Beneficios e Bonificações" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="412.0" layoutY="661.0" text="Beneficios e Bonificações" AnchorPane.leftAnchor="412.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="408.0" layoutY="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Beneficios e Bonificações" AnchorPane.leftAnchor="408.0">
+                                          <TextField layoutX="424.0" layoutY="650.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Beneficios e Bonificações" AnchorPane.bottomAnchor="333.0" AnchorPane.leftAnchor="408.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="1086.0" layoutY="111.0" text="Nivel de escolaridade" AnchorPane.rightAnchor="682.0">
+                                          <Label layoutX="1079.0" layoutY="132.0" text="Nivel de escolaridade" AnchorPane.rightAnchor="689.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="1078.0" layoutY="139.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nivel de escolaridade" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nivel de escolaridade" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="1022.0" layoutY="161.0" text="CTPS (Numero, Serie e data de emissão)">
+                                          <Label layoutX="1079.0" layoutY="208.0" text="CTPS (Numero, Serie e data de emissão)">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="976.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="CTPS (Numero, Serie e data de emissão)" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="CTPS (Numero, Serie e data de emissão)" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="1022.0" layoutY="244.0" text="PIS/ Pasesp">
+                                          <Label layoutX="1079.0" layoutY="271.0" text="PIS/ Pasesp">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="961.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="PIS/ Pasesp" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="309.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="PIS/ Pasesp" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="991.0" layoutY="293.0" text="Tipo de contrato (Temporario/CLT)">
+                                          <Label layoutX="1079.0" layoutY="353.0" text="Tipo de contrato (Temporario/CLT)">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="928.0" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Tipo de contrato (Temporario/CLT)" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="385.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Tipo de contrato (Temporario/CLT)" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="933.0" layoutY="365.0" text="Horario de trabalho (Dias, turno e carga horaria)">
+                                          <Label layoutX="1075.0" layoutY="429.0" text="Horario de trabalho (Dias, turno e carga horaria)">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="901.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Horario de trabalho (Dias, turno e carga horaria)" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="467.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Horario de trabalho (Dias, turno e carga horaria)" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <TextField layoutX="928.0" layoutY="453.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Acidentes de trabalho (Data, descrição e medidas tomadas)" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="538.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Acidentes de trabalho (Data, descrição e medidas tomadas)" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="933.0" layoutY="500.0" text="Advertências (Data e ocorrência)">
+                                          <Label layoutX="1075.0" layoutY="585.0" text="Advertências (Data e ocorrência)">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <TextField layoutX="1019.0" layoutY="525.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Advertências (Data e ocorrência)" AnchorPane.rightAnchor="404.0">
+                                          <TextField layoutX="1075.0" layoutY="621.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Advertências (Data e ocorrência)" AnchorPane.rightAnchor="404.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="216.0" layoutY="423.0" text="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="412.0">
+                                          <Label layoutX="413.0" layoutY="585.0" text="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="413.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Label layoutX="933.0" layoutY="411.0" text="Acidentes de trabalho (Data, descrição e medidas tomadas)">
+                                          <Label layoutX="1075.0" layoutY="507.0" text="Acidentes de trabalho (Data, descrição e medidas tomadas)">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
@@ -339,6 +339,11 @@
                                                 <Font name="System Bold" size="26.0" />
                                              </font>
                                           </Label>
+                                          <Button layoutX="836.0" layoutY="765.0" mnemonicParsing="false" text="Cadastrar" textFill="#56830f" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="876.0" AnchorPane.rightAnchor="908.0" AnchorPane.topAnchor="805.0">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </AnchorPane>
                               </content>
@@ -402,11 +407,11 @@
                         <content>
                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="1243.0">
                                        <children>
-                                          <TableView fx:id="tableDadoProfissional" layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1245.0">
+                                          <TableView layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1245.0">
                                             <columns>
                                                 <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" fx:id="colCargo" prefWidth="50.0" text="Cargo" />
-                                              <TableColumn id="colDepartamento" fx:id="colDepartamento" prefWidth="92.0" text="Departamento" />
+                                              <TableColumn id="colDepartamento" fx:id="coldepartamento" prefWidth="92.0" text="Departamento" />
                                                 <TableColumn id="colFuncao" fx:id="colFuncao" prefWidth="47.0" text="Função" />
                                                 <TableColumn id="colMaquinas" fx:id="colMaquinas" prefWidth="101.0" text="Máquinas opera" />
                                                 <TableColumn id="colDataAdmissao" fx:id="colDataAdmissao" prefWidth="97.0" text="Data Admissão" />
@@ -418,7 +423,7 @@
                                                 <TableColumn id="colPisPasep" fx:id="colPisPasep" prefWidth="62.0" text="PIS/Pasep" />
                                                 <TableColumn id="colContrato" fx:id="colContrato" prefWidth="62.0" text="Contrato" />
                                                 <TableColumn id="colHorario" fx:id="colHorario" prefWidth="125.0" text="Horário de Trabalho" />
-                                                <TableColumn id="colAcidentes" fx:id="colAcidentes" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
+                                                <TableColumn id="colAcidente" fx:id="colAcidentes" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
                                                 <TableColumn fx:id="colAdvertencia" prefWidth="84.3333740234375" text="Advertencia" />
                                             </columns>
                                           </TableView>
@@ -428,9 +433,17 @@
                       </Tab>
                     </tabs>
                   </TabPane>
-                        <TextField layoutX="195.0" layoutY="36.0" promptText="Nome" />
-                        <ComboBox layoutX="29.0" layoutY="36.0" prefWidth="150.0" />
-                        <Button layoutX="318.0" layoutY="75.0" mnemonicParsing="false" text="Button" />
+                        <TextField layoutX="244.0" layoutY="36.0" prefHeight="37.0" prefWidth="184.0" promptText="Nome" />
+                        <ComboBox layoutX="29.0" layoutY="36.0" prefHeight="35.0" prefWidth="176.0" />
+                        <Button layoutX="514.0" layoutY="36.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Filtrar">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="522.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconFiltrar.png" />
+                           </image>
+                        </ImageView>
                </children></AnchorPane>
       </content>
                <graphic>
