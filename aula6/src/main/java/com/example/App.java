@@ -13,7 +13,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
 
         //Caminho para o arquivo FXML
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/example/a.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/com/example/funci.fxml"));
         Parent root = loader.load();
         //Gera o titulo da Página e o Icone
         stage.setTitle("Flip Niquel");
