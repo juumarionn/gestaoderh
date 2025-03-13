@@ -16,12 +16,15 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: c3d5db;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.DadoPessoalController">
    <children>
-      <Label text="Gestão de RH" />
       <ImageView fitHeight="27.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Documents/GitHub/gestaoderh/Desktop/OIP.png" />
+            <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/logoFabrica.png" />
          </image>
       </ImageView>
+      <Label text="Gestão de RH">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Label>
       <TabPane prefHeight="1008.0" prefWidth="1133.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Cadastro">
@@ -119,7 +122,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <Label layoutX="1080.0" layoutY="208.0" text="RG" AnchorPane.bottomAnchor="818.0">
+                                          <Label layoutX="1080.0" layoutY="208.0" text="RG" AnchorPane.bottomAnchor="818.0" AnchorPane.rightAnchor="816.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -139,7 +142,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
-                                          <Label layoutX="1080.0" layoutY="348.0" text="Telefone">
+                                          <Label layoutX="1080.0" layoutY="348.0" text="Telefone" AnchorPane.rightAnchor="816.0">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
@@ -199,61 +202,172 @@
                                        </children>
                                     </AnchorPane>
                               </content>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconPessoa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="Dados profissionais">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Cargo" />
-                                          <Label text="Cargo" />
-                                          <Label text="Departamento" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Departamento" />
-                                          <Label text="Descrição das funções" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Descrição das funções" />
-                                          <Label text="Máquinas que opera" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Máquinas que opera" />
-                                          <Label text="Data de admissão" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Data de admissão" />
-                                          <Label text="Salário" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Salário" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Dados bancários (Para deposito salário)" />
-                                          <Label text="Beneficios e Bonificações" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Beneficios e Bonificações" />
-                                          <Label text="Nivel de escolaridade" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nivel de escolaridade" />
-                                          <Label text="CTPS (Numero, Serie e data de emissão)" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="CTPS (Numero, Serie e data de emissão)" />
-                                          <Label text="PIS/ Pasesp" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="PIS/ Pasesp" />
-                                          <Label text="Tipo de contrato (Temporario/CLT)" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Tipo de contrato (Temporario/CLT)" />
-                                          <Label text="Horario de trabalho (Dias, turno e carga horaria)" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Horario de trabalho (Dias, turno e carga horaria)" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Acidentes de trabalho (Data, descrição e medidas tomadas)" />
-                                          <Label text="Advertências (Data e ocorrência)" />
-                                          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Advertências (Data e ocorrência)" />
-                                          <Label text="Dados bancários (Para deposito salário)" />
-                                          <Label text="Acidentes de trabalho (Data, descrição e medidas tomadas)" />
-                                          <Label alignment="CENTER" prefHeight="17.0" prefWidth="502.0" text="Dados profissionais">
+                                          <TextField layoutX="220.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Cargo" AnchorPane.leftAnchor="408.0">
                                              <font>
-                                                <Font name="System Bold" size="12.0" />
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="229.0" layoutY="90.0" text="Cargo" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <Label layoutX="223.0" layoutY="139.0" text="Departamento" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="213.0" layoutY="161.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Departamento" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="206.0" layoutY="201.0" text="Descrição das funções" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="408.0" layoutY="231.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Descrição das funções" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="368.0" layoutY="268.0" text="Máquinas que opera" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="220.0" layoutY="293.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Máquinas que opera" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="218.0" layoutY="318.0" text="Data de admissão" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="213.0" layoutY="333.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Data de admissão" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="261.0" layoutY="365.0" text="Salário" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="220.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Salário" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <TextField layoutX="220.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="220.0" layoutY="479.0" text="Beneficios e Bonificações" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="408.0" layoutY="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Beneficios e Bonificações" AnchorPane.leftAnchor="408.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="1086.0" layoutY="111.0" text="Nivel de escolaridade" AnchorPane.rightAnchor="682.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="1078.0" layoutY="139.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Nivel de escolaridade" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="1022.0" layoutY="161.0" text="CTPS (Numero, Serie e data de emissão)">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="976.0" layoutY="201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="CTPS (Numero, Serie e data de emissão)" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="1022.0" layoutY="244.0" text="PIS/ Pasesp">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="961.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="PIS/ Pasesp" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="991.0" layoutY="293.0" text="Tipo de contrato (Temporario/CLT)">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="928.0" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Tipo de contrato (Temporario/CLT)" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="933.0" layoutY="365.0" text="Horario de trabalho (Dias, turno e carga horaria)">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="901.0" layoutY="391.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Horario de trabalho (Dias, turno e carga horaria)" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <TextField layoutX="928.0" layoutY="453.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Acidentes de trabalho (Data, descrição e medidas tomadas)" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="933.0" layoutY="500.0" text="Advertências (Data e ocorrência)">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <TextField layoutX="1019.0" layoutY="525.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="441.0" promptText="Advertências (Data e ocorrência)" AnchorPane.rightAnchor="404.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Label layoutX="216.0" layoutY="423.0" text="Dados bancários (Para deposito salário)" AnchorPane.leftAnchor="412.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <Label layoutX="933.0" layoutY="411.0" text="Acidentes de trabalho (Data, descrição e medidas tomadas)">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <Label alignment="CENTER" layoutX="709.0" layoutY="26.0" prefHeight="17.0" prefWidth="502.0" text="Dados profissionais" AnchorPane.leftAnchor="709.0" AnchorPane.rightAnchor="709.0">
+                                             <font>
+                                                <Font name="System Bold" size="26.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
                               </content>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconTrabalho.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                             </Tab>
                           </tabs>
                         </TabPane>
                      </children>
                   </AnchorPane>
             </content>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconCadastro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
           </Tab>
           <Tab text="Visualização">
        <content>
         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="922.0" prefWidth="1335.0">
                <children>
-                  <TabPane layoutX="14.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="1242.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="14.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="1248.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Dados Pessoais">
                            <content>
@@ -288,7 +402,7 @@
                         <content>
                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="1243.0">
                                        <children>
-                                          <TableView layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1242.0">
+                                          <TableView layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1245.0">
                                             <columns>
                                                 <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" fx:id="colCargo" prefWidth="50.0" text="Cargo" />
@@ -316,9 +430,16 @@
                   </TabPane>
                         <TextField layoutX="195.0" layoutY="36.0" promptText="Nome" />
                         <ComboBox layoutX="29.0" layoutY="36.0" prefWidth="150.0" />
-                        <Button mnemonicParsing="false" text="Button" />
+                        <Button layoutX="318.0" layoutY="75.0" mnemonicParsing="false" text="Button" />
                </children></AnchorPane>
       </content>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconVisualizar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
     </Tab>
             <Tab text="Atualização">
             <content>
@@ -405,6 +526,13 @@
                      </children>
                   </AnchorPane>
             </content>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Documents/GitHub/gestaoderh/aula6/src/main/resources/com/example/iconSave.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Tab>
         </tabs>
       </TabPane>
