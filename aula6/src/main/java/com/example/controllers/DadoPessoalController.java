@@ -107,20 +107,20 @@ public class DadoPessoalController {
 
     @FXML private TableView<DadoProfissional> tableDadoProfissional;
     @FXML private TableColumn<DadoProfissional, String> colCargo;
-    @FXML private TableColumn<DadoProfissional, String> coldepartamento;
-    @FXML private TableColumn<DadoProfissional, String> colfuncao;
-    @FXML private TableColumn<DadoProfissional, String> colmaquinas;
-    @FXML private TableColumn<DadoProfissional, String> coladmissao;
-    @FXML private TableColumn<DadoProfissional, String> colsalario;
-    @FXML private TableColumn<DadoProfissional, String> coldadosbancarios;
-    @FXML private TableColumn<DadoProfissional, String> colbeneficios;
-    @FXML private TableColumn<DadoProfissional, String> colescolaridade;
-    @FXML private TableColumn<DadoProfissional, String> colctps;
-    @FXML private TableColumn<DadoProfissional, String> colpis;
-    @FXML private TableColumn<DadoProfissional, String> colcontrato;
-    @FXML private TableColumn<DadoProfissional, String> colhorario;
-    @FXML private TableColumn<DadoProfissional, String> colacidentes;
-    @FXML private TableColumn<DadoProfissional, String> coladvertencias;
+    @FXML private TableColumn<DadoProfissional, String> colDepartamento;
+    @FXML private TableColumn<DadoProfissional, String> colFuncao;
+    @FXML private TableColumn<DadoProfissional, String> colMaquinas;
+    @FXML private TableColumn<DadoProfissional, String> colAdmissao;
+    @FXML private TableColumn<DadoProfissional, String> colSalario;
+    @FXML private TableColumn<DadoProfissional, String> colDadosbancarios;
+    @FXML private TableColumn<DadoProfissional, String> colBeneficios;
+    @FXML private TableColumn<DadoProfissional, String> colEscolaridade;
+    @FXML private TableColumn<DadoProfissional, String> colCtps;
+    @FXML private TableColumn<DadoProfissional, String> colPis;
+    @FXML private TableColumn<DadoProfissional, String> colContrato;
+    @FXML private TableColumn<DadoProfissional, String> colHorario;
+    @FXML private TableColumn<DadoProfissional, String> colAcidentes;
+    @FXML private TableColumn<DadoProfissional, String> colAdvertencias;
    
 
 
@@ -213,20 +213,20 @@ public class DadoPessoalController {
         carregarDadoPessoal();
 
         colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
-        coldepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
-        colfuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));
-        colmaquinas.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
-        coladmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
-        colsalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
-        coldadosbancarios.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
-        colbeneficios.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
-        colescolaridade.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
-        colctps.setCellValueFactory(new PropertyValueFactory<>("ctps"));
-        colpis.setCellValueFactory(new PropertyValueFactory<>("pis"));
-        colcontrato.setCellValueFactory(new PropertyValueFactory<>("contrato"));
-        colhorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
-        colacidentes.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
-        coladvertencias.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
+        colDepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
+        colFuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));
+        colMaquinas.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
+        colAdmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
+        colSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
+        colDadosbancarios.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
+        colBeneficios.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
+        colEscolaridade.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
+        colCtps.setCellValueFactory(new PropertyValueFactory<>("ctps"));
+        colPis.setCellValueFactory(new PropertyValueFactory<>("pis"));
+        colContrato.setCellValueFactory(new PropertyValueFactory<>("contrato"));
+        colHorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colAcidentes.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
+        colAdvertencias.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
         
 
         carregarDadoProfissional();
