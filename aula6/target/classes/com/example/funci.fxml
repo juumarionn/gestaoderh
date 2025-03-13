@@ -402,7 +402,7 @@
                         <content>
                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="1243.0">
                                        <children>
-                                          <TableView layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1245.0">
+                                          <TableView fx:id="tableDadoProfissional" layoutX="6.0" layoutY="-9.0" prefHeight="607.0" prefWidth="1245.0">
                                             <columns>
                                                 <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" fx:id="colCargo" prefWidth="50.0" text="Cargo" />
@@ -418,7 +418,7 @@
                                                 <TableColumn id="colPisPasep" fx:id="colPisPasep" prefWidth="62.0" text="PIS/Pasep" />
                                                 <TableColumn id="colContrato" fx:id="colContrato" prefWidth="62.0" text="Contrato" />
                                                 <TableColumn id="colHorario" fx:id="colHorario" prefWidth="125.0" text="Horário de Trabalho" />
-                                                <TableColumn id="colAcidente" fx:id="colAcidentes" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
+                                                <TableColumn id="colAcidentes" fx:id="colAcidentes" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
                                                 <TableColumn fx:id="colAdvertencia" prefWidth="84.3333740234375" text="Advertencia" />
                                             </columns>
                                           </TableView>

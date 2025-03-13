@@ -110,17 +110,17 @@ public class DadoPessoalController {
     @FXML private TableColumn<DadoProfissional, String> colDepartamento;
     @FXML private TableColumn<DadoProfissional, String> colFuncao;
     @FXML private TableColumn<DadoProfissional, String> colMaquinas;
-    @FXML private TableColumn<DadoProfissional, String> colAdmissao;
+    @FXML private TableColumn<DadoProfissional, String> colDataAdmissao;
     @FXML private TableColumn<DadoProfissional, String> colSalario;
-    @FXML private TableColumn<DadoProfissional, String> colDadosbancarios;
+    @FXML private TableColumn<DadoProfissional, String> colDadosBancarios;
     @FXML private TableColumn<DadoProfissional, String> colBeneficios;
     @FXML private TableColumn<DadoProfissional, String> colEscolaridade;
     @FXML private TableColumn<DadoProfissional, String> colCtps;
-    @FXML private TableColumn<DadoProfissional, String> colPis;
+    @FXML private TableColumn<DadoProfissional, String> colPisPasep;
     @FXML private TableColumn<DadoProfissional, String> colContrato;
     @FXML private TableColumn<DadoProfissional, String> colHorario;
     @FXML private TableColumn<DadoProfissional, String> colAcidentes;
-    @FXML private TableColumn<DadoProfissional, String> colAdvertencias;
+    @FXML private TableColumn<DadoProfissional, String> colAdvertencia;
    
 
 
@@ -216,17 +216,17 @@ public class DadoPessoalController {
         colDepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
         colFuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));
         colMaquinas.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
-        colAdmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
+        colDataAdmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
         colSalario.setCellValueFactory(new PropertyValueFactory<>("salario"));
-        colDadosbancarios.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
+        colDadosBancarios.setCellValueFactory(new PropertyValueFactory<>("dadosbancarios"));
         colBeneficios.setCellValueFactory(new PropertyValueFactory<>("beneficios"));
         colEscolaridade.setCellValueFactory(new PropertyValueFactory<>("escolaridade"));
         colCtps.setCellValueFactory(new PropertyValueFactory<>("ctps"));
-        colPis.setCellValueFactory(new PropertyValueFactory<>("pis"));
+        colPisPasep.setCellValueFactory(new PropertyValueFactory<>("pis"));
         colContrato.setCellValueFactory(new PropertyValueFactory<>("contrato"));
         colHorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
         colAcidentes.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
-        colAdvertencias.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
+        colAdvertencia.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
         
 
         carregarDadoProfissional();
@@ -356,7 +356,7 @@ private void salvarDadoProfissional() {
     
     
                 try (Connection connection = Database.getConnection();
-                 PreparedStatement statement = connection.prepareStatement("UPDATE DadoProfissional SET cargo = ?, departamento = ?, funcao = ?,maquinas = ?, salario = ?, dadosbancarios = ?, beneficios = ?, escolaridade = ?, contrato = ?, horario = ?, acidentes = ?, advertencias = ?  WHERE id = ?")) {
+                 PreparedStatement statement = connection.prepareStatement("UPDATE dadosprofissionais SET cargo = ?, departamento = ?, funcao = ?,maquinas = ?, salario = ?, dadosbancarios = ?, beneficios = ?, escolaridade = ?, contrato = ?, horario = ?, acidentes = ?, advertencias = ?  WHERE id = ?")) {
                
                     statement.setString(1, cargo);
                     statement.setString(2, departamento);
@@ -469,7 +469,7 @@ private void salvarDadoProfissional() {
                 listaDadoProfissional.clear();
                 try (Connection conn = Database.getConnection();
                     Statement stmt = conn.createStatement();
-                    ResultSet rs = stmt.executeQuery("SELECT * FROM DadoProfissional")) {
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM dadosprofissionais")) {
 
                     while (rs.next()) {
                         listaDadoProfissional.add(new DadoProfissional (rs.getInt("id"), rs.getString("cargo"), rs.getString("departamento"), rs.getString("funcao"), rs.getString("maquinas"), rs.getString("admissao"), rs.getString("salario"), rs.getString("dadosbancarios"), rs.getString("beneficios"), rs.getString("escolaridade"), rs.getString("ctps"), rs.getString("pis"), rs.getString("contrato"), rs.getString("horario"), rs.getString("acidentes"), rs.getString("advertencias")));
