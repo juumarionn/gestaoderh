@@ -411,7 +411,7 @@
                                             <columns>
                                                 <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
                                               <TableColumn id="colCargo" fx:id="colCargo" prefWidth="50.0" text="Cargo" />
-                                              <TableColumn id="colDepartamento" fx:id="coldepartamento" prefWidth="92.0" text="Departamento" />
+                                              <TableColumn id="coldepartamento" fx:id="coldepartamento" prefWidth="92.0" text="Departamento" />
                                                 <TableColumn id="colFuncao" fx:id="colFuncao" prefWidth="47.0" text="Função" />
                                                 <TableColumn id="colMaquinas" fx:id="colMaquinas" prefWidth="101.0" text="Máquinas opera" />
                                                 <TableColumn id="colDataAdmissao" fx:id="colDataAdmissao" prefWidth="97.0" text="Data Admissão" />

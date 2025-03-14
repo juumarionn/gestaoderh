@@ -107,7 +107,7 @@ public class DadoPessoalController {
 
     @FXML private TableView<DadoProfissional> tableDadoProfissional;
     @FXML private TableColumn<DadoProfissional, String> colCargo;
-    @FXML private TableColumn<DadoProfissional, String> colDepartamento;
+    @FXML private TableColumn<DadoProfissional, String> coldepartamento;
     @FXML private TableColumn<DadoProfissional, String> colFuncao;
     @FXML private TableColumn<DadoProfissional, String> colMaquinas;
     @FXML private TableColumn<DadoProfissional, String> colDataAdmissao;
@@ -213,7 +213,7 @@ public class DadoPessoalController {
         carregarDadoPessoal();
 
         colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
-        colDepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
+        coldepartamento.setCellValueFactory(new PropertyValueFactory<>("departamento"));
         colFuncao.setCellValueFactory(new PropertyValueFactory<>("funcao"));
         colMaquinas.setCellValueFactory(new PropertyValueFactory<>("maquinas"));
         colDataAdmissao.setCellValueFactory(new PropertyValueFactory<>("admissao"));
@@ -426,21 +426,20 @@ private void salvarDadoProfissional() {
             }
     
 
-            DadoProfissional DadoProfissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
-            if (DadoProfissionalSelecionado!= null) {
-                
-                txtcargoAtualizarFunc.setText(DadoProfissionalSelecionado.getCargoFunc());
-                txtdepartamentoAtualizarFunc.setText(DadoProfissionalSelecionado.getDepartamento());
-                txtfuncaoAtualizarFunc.setText(DadoProfissionalSelecionado.getFuncao());
-                txtmaquinasAtualizarFunc.setText(DadoProfissionalSelecionado.getMaquina_opera());
-                 txtsalarioAtualizarFunc.setText(DadoProfissionalSelecionado.getSalario());
-                txtdadosbancariosAtualizarFunc.setText(DadoProfissionalSelecionado.getDados_bancarios());
-                txtbeneficiosAtualizarFunc.setText(DadoProfissionalSelecionado.getBeneficios());
-                txtescolaridadeAtualizarFunc.setText(DadoProfissionalSelecionado.getEscolaridade());
-                txtcontratoAtualizarFunc.setText(DadoProfissionalSelecionado.getContrato());
-                txthorarioAtualizarFunc.setText(DadoProfissionalSelecionado.getHorario_trabalho());
-                txtacidentesAtualizarFunc.setText(DadoProfissionalSelecionado.getAcidentes());
-                txtadvertenciasAtualizarFunc.setText(DadoProfissionalSelecionado.getAdvertencia());
+            DadoProfissional dadoprofissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
+            if (dadoprofissionalSelecionado!= null) {
+                txtcargoAtualizarFunc.setText(dadoprofissionalSelecionado.getCargoFunc());
+                txtdepartamentoAtualizarFunc.setText(dadoprofissionalSelecionado.getDepartamento());
+                txtfuncaoAtualizarFunc.setText(dadoprofissionalSelecionado.getFuncao());
+                txtmaquinasAtualizarFunc.setText(dadoprofissionalSelecionado.getMaquina_opera());
+                 txtsalarioAtualizarFunc.setText(dadoprofissionalSelecionado.getSalario());
+                txtdadosbancariosAtualizarFunc.setText(dadoprofissionalSelecionado.getDados_bancarios());
+                txtbeneficiosAtualizarFunc.setText(dadoprofissionalSelecionado.getBeneficios());
+                txtescolaridadeAtualizarFunc.setText(dadoprofissionalSelecionado.getEscolaridade());
+                txtcontratoAtualizarFunc.setText(dadoprofissionalSelecionado.getContrato());
+                txthorarioAtualizarFunc.setText(dadoprofissionalSelecionado.getHorario_trabalho());
+                txtacidentesAtualizarFunc.setText(dadoprofissionalSelecionado.getAcidentes());
+                txtadvertenciasAtualizarFunc.setText(dadoprofissionalSelecionado.getAdvertencia());
 
 
 
