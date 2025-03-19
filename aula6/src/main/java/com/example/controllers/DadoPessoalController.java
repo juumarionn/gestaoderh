@@ -158,7 +158,11 @@ public class DadoPessoalController {
     @FXML private TextField filtroacidentes;
     @FXML private TextField filtroadvertencias;
 
-
+    @FXML private TabPane tabPaneRh;
+    @FXML private Tab tabCadastro;
+    @FXML private TabPane tabPaneCadastro;
+    @FXML private Tab tabDadoPessoal;
+    @FXML private Tab tabDadoProfissional;
 
 
 
@@ -290,7 +294,7 @@ private void salvarDadosProfissional() {
 
     @FXML
 private void salvarDadoPessoal() {
-        
+    tabPaneCadastro.getSelectionModel().select(tabDadoProfissional);
     }
             
     @FXML

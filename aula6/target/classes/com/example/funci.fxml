@@ -28,7 +28,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="876.0" layoutY="805.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="136.0" text="Cadastrar" textFill="#56830f" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="876.0" AnchorPane.rightAnchor="908.0" AnchorPane.topAnchor="805.0">
+                                          <Button layoutX="829.0" layoutY="799.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="262.0" text="Ir para dados profissionais" textFill="#56830f" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="829.0" AnchorPane.rightAnchor="829.0" AnchorPane.topAnchor="799.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
