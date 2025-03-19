@@ -28,7 +28,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="829.0" layoutY="799.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="262.0" text="Ir para dados profissionais" textFill="#56830f" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="829.0" AnchorPane.rightAnchor="829.0" AnchorPane.topAnchor="799.0">
+                                          <Button layoutX="829.0" layoutY="799.0" mnemonicParsing="false" onAction="#salvarDadoPessoal" prefHeight="65.0" prefWidth="262.0" style="-fx-background-color: #6bc64f;" text="Ir para dados profissionais" textFill="WHITE" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="829.0" AnchorPane.rightAnchor="829.0" AnchorPane.topAnchor="799.0">
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font>
@@ -281,7 +281,7 @@
                                              <font>
                                                 <Font size="16.0" />
                                              </font></TextField>
-                                          <Label layoutX="1079.0" layoutY="271.0" text="PIS/ Pasesp">
+                                          <Label layoutX="1079.0" layoutY="271.0" text="PIS/ Pasep">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
@@ -370,31 +370,31 @@
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <ComboBox layoutX="349.0" layoutY="165.0" prefHeight="25.0" prefWidth="149.0" promptText="Sexo" />
-                                          <TextField layoutX="348.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText=" Nome Completo" />
-                                          <Button layoutX="1114.0" layoutY="223.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Filtrar">
+                                          <TextField fx:id="filtroNomeFunc" layoutX="348.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText=" Nome Completo" AnchorPane.leftAnchor="348.0" AnchorPane.topAnchor="55.0" />
+                                          <Button layoutX="1336.0" layoutY="137.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" text="   Filtrar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </Button>
-                                          <TableView fx:id="tableDadoPessoal" layoutX="350.0" layoutY="315.0" prefHeight="691.0" prefWidth="1222.0" AnchorPane.leftAnchor="348.0" AnchorPane.rightAnchor="348.0">
+                                          <TableView fx:id="tableDadoPessoal" layoutX="-1.0" layoutY="315.0" prefHeight="691.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="315.0">
                                             <columns>
                                                 <TableColumn fx:id="colIdFunc" prefWidth="75.0" text="ID" />
-                                              <TableColumn id="colNome" fx:id="colNomeFunc" prefWidth="51.0" text="Nome" />
+                                              <TableColumn id="colNome" fx:id="colNomeFunc" prefWidth="150.0" text="Nome" />
                                               <TableColumn id="colData_Nascimento" fx:id="colDataNascimentoFunc" prefWidth="119.0" text="Data de Nascimento" />
                                                 <TableColumn id="colSexo" fx:id="colSexoFunc" prefWidth="39.0" text="Sexo" />
-                                                <TableColumn id="colEstado_Civil" fx:id="colEstado_CivilFunc" prefWidth="70.0" text="Estado Civil" />
-                                                <TableColumn id="colConjuge" fx:id="colConjugeFunc" prefWidth="53.0" text="Conjuge" />
-                                                <TableColumn id="colDependentes" fx:id="colDependentesFunc" prefWidth="85.0" text="Dependentes" />
+                                                <TableColumn id="colEstado_Civil" fx:id="colEstado_CivilFunc" prefWidth="75.0" text="Estado Civil" />
+                                                <TableColumn id="colConjuge" fx:id="colConjugeFunc" prefWidth="100.0" text="Conjuge" />
+                                                <TableColumn id="colDependentes" fx:id="colDependentesFunc" prefWidth="100.0" text="Dependentes" />
                                                 <TableColumn id="colNacionalidade" fx:id="colNacionalidadeFunc" prefWidth="92.0" text="Nacionalidade" />
                                                 <TableColumn id="colNaturalidade" fx:id="colNaturalidadeFunc" prefWidth="84.0" text="Naturalidade" />
-                                                <TableColumn id="colCpf" fx:id="colCpfFunc" prefWidth="38.0" text="CPF" />
-                                                <TableColumn id="colRg" fx:id="colRgFunc" prefWidth="31.0" text="RG" />
-                                                <TableColumn id="colEndereço" fx:id="colEnderecoFunc" prefWidth="65.0" text="Endereço" />
-                                                <TableColumn id="colTelefone" fx:id="colTelefoneFunc" prefWidth="67.0" text="Telefone" />
-                                                <TableColumn id="colEmail" fx:id="colEmailFunc" prefWidth="55.0" text="Email" />
-                                                <TableColumn id="colFiliaçao" fx:id="colFiliacaoFunc" prefWidth="71.0" text="Filiação" />
-                                                <TableColumn id="colTipo_Sanguineo" fx:id="colTipo_SanguineoFunc" prefWidth="98.0" text="Tipo Sanguineo" />
-                                                <TableColumn id="colContato_Emergencia" fx:id="colContato_EmergenciaFunc" prefWidth="125.0" text="Contato Emergência" />
+                                                <TableColumn id="colCpf" fx:id="colCpfFunc" prefWidth="100.0" text="CPF" />
+                                                <TableColumn id="colRg" fx:id="colRgFunc" prefWidth="100.0" text="RG" />
+                                                <TableColumn id="colEndereço" fx:id="colEnderecoFunc" prefWidth="175.0" text="Endereço" />
+                                                <TableColumn id="colTelefone" fx:id="colTelefoneFunc" prefWidth="110.0" text="Telefone" />
+                                                <TableColumn id="colEmail" fx:id="colEmailFunc" prefWidth="175.0" text="Email" />
+                                                <TableColumn id="colFiliaçao" fx:id="colFiliacaoFunc" prefWidth="150.0" text="Filiação" />
+                                                <TableColumn id="colTipo_Sanguineo" fx:id="colTipo_SanguineoFunc" prefWidth="95.0" text="Tipo Sanguineo" />
+                                                <TableColumn id="colContato_Emergencia" fx:id="colContato_EmergenciaFunc" prefWidth="130.0" text="Contato Emergência" />
                                             </columns>
                                           </TableView>
                                           <TextField layoutX="811.0" layoutY="55.0" promptText="CPF" />
@@ -402,42 +402,80 @@
                                           <ComboBox layoutX="349.0" layoutY="215.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" />
                                           <TextField layoutX="572.0" layoutY="216.0" prefHeight="23.0" prefWidth="151.0" promptText="Naturalidade" />
                                           <TextField layoutX="572.0" layoutY="165.0" prefHeight="23.0" prefWidth="151.0" promptText="Nacionalidade" />
-                                          <TextField layoutX="348.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Data de nascimento" />
+                                          <TextField fx:id="filtroDataNascimentoFunc" layoutX="348.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Data de nascimento" />
                                           <TextField layoutX="572.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Conjuge" />
                                           <TextField layoutX="572.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Dependentes" />
                                           <TextField layoutX="810.0" layoutY="165.0" prefHeight="23.0" prefWidth="151.0" promptText="Endereço completo" />
-                                          <TextField layoutX="1039.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Email" />
+                                          <TextField layoutX="810.0" layoutY="216.0" prefHeight="23.0" prefWidth="151.0" promptText="Email" />
+                                          <TextField layoutX="1045.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Filiação" />
+                                          <TextField layoutX="1045.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Tipo sanguineo" />
+                                          <TextField layoutX="1045.0" layoutY="165.0" prefHeight="25.0" prefWidth="151.0" promptText="Contato de emergencia" />
+                                          <ImageView fitHeight="20.0" fitWidth="24.0" layoutX="1344.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@iconFiltrar.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button layoutX="1268.0" layoutY="144.0" mnemonicParsing="false" text="Button" />
                                        </children>
                               </AnchorPane>
                            </content>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@iconPessoa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                       </Tab>
                       <Tab text="Dados Profissionais">
                         <content>
-                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="857.0" prefWidth="1380.0">
+                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="922.0" prefWidth="1920.0">
                                        <children>
-                                          <TableView fx:id="tableDadoProfissional" layoutX="25.0" layoutY="207.0" prefHeight="607.0" prefWidth="1393.0">
+                                          <TableView fx:id="tableDadoProfissional" layoutY="316.0" prefHeight="607.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="315.0">
                                             <columns>
-                                                <TableColumn fx:id="colNomeJun" prefWidth="36.0" text="Nome" />
-                                              <TableColumn id="colCargo" fx:id="colCargo" minWidth="0.0" prefWidth="36.0" text="Cargo" />
+                                                <TableColumn fx:id="colNomeJun" prefWidth="170.0" text="Nome" />
+                                              <TableColumn id="colCargo" fx:id="colCargo" minWidth="0.0" prefWidth="75.0" text="Cargo" />
                                               <TableColumn id="coldepartamento" fx:id="coldepartamento" prefWidth="92.0" text="Departamento" />
-                                                <TableColumn id="colFuncao" fx:id="colFuncao" prefWidth="47.0" text="Função" />
-                                                <TableColumn id="colMaquinas" fx:id="colMaquinas" prefWidth="101.0" text="Máquinas opera" />
+                                                <TableColumn id="colFuncao" fx:id="colFuncao" prefWidth="150.0" text="Função" />
+                                                <TableColumn id="colMaquinas" fx:id="colMaquinas" prefWidth="110.0" text="Máquinas opera" />
                                                 <TableColumn id="colDataAdmissao" fx:id="colDataAdmissao" prefWidth="97.0" text="Data Admissão" />
-                                                <TableColumn id="colSalario" fx:id="colSalario" prefWidth="50.0" text="Salário" />
-                                                <TableColumn id="colDadosBancarios" fx:id="colDadosBancarios" prefWidth="103.0" text="Dados Bancários" />
-                                                <TableColumn id="colBeneficios" fx:id="colBeneficios" prefWidth="70.0" text="Benefícios" />
-                                                <TableColumn id="colEscolaridade" fx:id="colEscolaridade" text="Escolaridade" />
-                                                <TableColumn id="colCtps" fx:id="colCtps" prefWidth="46.0" text="CTPS" />
-                                                <TableColumn id="colPisPasep" fx:id="colPisPasep" prefWidth="62.0" text="PIS/Pasep" />
-                                                <TableColumn id="colContrato" fx:id="colContrato" prefWidth="62.0" text="Contrato" />
+                                                <TableColumn id="colSalario" fx:id="colSalario" prefWidth="75.0" text="Salário" />
+                                                <TableColumn id="colDadosBancarios" fx:id="colDadosBancarios" prefWidth="150.0" text="Dados Bancários" />
+                                                <TableColumn id="colBeneficios" fx:id="colBeneficios" prefWidth="150.0" text="Benefícios" />
+                                                <TableColumn id="colEscolaridade" fx:id="colEscolaridade" prefWidth="130.0" text="Escolaridade" />
+                                                <TableColumn id="colCtps" fx:id="colCtps" prefWidth="75.0" text="CTPS" />
+                                                <TableColumn id="colPisPasep" fx:id="colPisPasep" prefWidth="75.0" text="PIS/Pasep" />
+                                                <TableColumn id="colContrato" fx:id="colContrato" prefWidth="100.0" text="Contrato" />
                                                 <TableColumn id="colHorario" fx:id="colHorario" prefWidth="125.0" text="Horário de Trabalho" />
-                                                <TableColumn id="colAcidente" fx:id="colAcidentes" prefWidth="136.6666259765625" text="Acidente de Trabalho" />
-                                                <TableColumn fx:id="colAdvertencia" prefWidth="84.3333740234375" text="Advertencia" />
+                                                <TableColumn id="colAcidente" fx:id="colAcidentes" prefWidth="150.0" text="Acidente de Trabalho" />
+                                                <TableColumn fx:id="colAdvertencia" prefWidth="150.0" text="Advertencia" />
                                             </columns>
                                           </TableView>
+                                          <TextField layoutX="268.0" layoutY="51.0" prefHeight="23.0" prefWidth="151.0" promptText="Cargo" AnchorPane.leftAnchor="348.0" AnchorPane.topAnchor="55.0" />
+                                          <TextField layoutX="348.0" layoutY="109.0" prefHeight="23.0" prefWidth="151.0" promptText="Departamento" />
+                                          <TextField layoutX="348.0" layoutY="158.0" prefHeight="23.0" prefWidth="151.0" promptText="Descrição de funções" />
+                                          <TextField layoutX="348.0" layoutY="214.0" prefHeight="23.0" prefWidth="151.0" promptText="Maquina que opera" />
+                                          <TextField layoutX="584.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Data de admissão" />
+                                          <TextField layoutX="584.0" layoutY="109.0" prefHeight="23.0" prefWidth="151.0" promptText="Salario" />
+                                          <TextField layoutX="584.0" layoutY="158.0" prefHeight="23.0" prefWidth="151.0" promptText="Dados bancarios" />
+                                          <TextField layoutX="584.0" layoutY="214.0" prefHeight="23.0" prefWidth="151.0" promptText="Beneficios" />
+                                          <TextField layoutX="826.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Escolaridade" />
+                                          <TextField layoutX="826.0" layoutY="109.0" prefHeight="23.0" prefWidth="151.0" promptText="CTPS" />
+                                          <TextField layoutX="826.0" layoutY="158.0" prefHeight="23.0" prefWidth="151.0" promptText="PIS/ Pasep" />
+                                          <TextField layoutX="826.0" layoutY="214.0" prefHeight="23.0" prefWidth="151.0" promptText="Contrato" />
+                                          <TextField layoutX="1058.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Horario de trabalho" />
+                                          <TextField layoutX="1058.0" layoutY="109.0" prefHeight="23.0" prefWidth="151.0" promptText="Acidente de trabalho" />
+                                          <TextField layoutX="1058.0" layoutY="158.0" prefHeight="23.0" prefWidth="151.0" promptText="Advertencia" />
                                        </children>
                               </AnchorPane>
                         </content>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@iconTrabalho.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                       </Tab>
                     </tabs>
                   </TabPane>
