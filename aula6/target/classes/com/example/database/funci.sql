@@ -51,7 +51,7 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
 
 <<<<<<< Updated upstream
-SELECT * FROM dadospessoais INNER JOIN dadosprofissionais ON  dados_pessoais = id;
+SELECT nome_completo FROM dadospessoais INNER JOIN dadosprofissionais ON  dados_pessoais = id;
 =======
 SELECT DATE_FORMAT(data_nascimento, '%d/%m/%Y') AS data_nascimento_br
 FROM dadospessoais;

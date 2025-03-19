@@ -369,9 +369,9 @@
                            <content>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <ComboBox layoutX="581.0" layoutY="166.0" prefHeight="25.0" prefWidth="149.0" promptText="Sexo" />
+                                          <ComboBox layoutX="349.0" layoutY="165.0" prefHeight="25.0" prefWidth="149.0" promptText="Sexo" />
                                           <TextField layoutX="348.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText=" Nome Completo" />
-                                          <Button layoutX="843.0" layoutY="209.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Filtrar">
+                                          <Button layoutX="1114.0" layoutY="223.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Filtrar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -397,11 +397,16 @@
                                                 <TableColumn id="colContato_Emergencia" fx:id="colContato_EmergenciaFunc" prefWidth="125.0" text="Contato Emergência" />
                                             </columns>
                                           </TableView>
-                                          <TextField layoutX="349.0" layoutY="112.0" promptText="CPF" />
-                                          <TextField layoutX="349.0" layoutY="166.0" promptText="RG" />
-                                          <ComboBox layoutX="581.0" layoutY="112.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" />
-                                          <TextField layoutX="348.0" layoutY="215.0" prefHeight="23.0" prefWidth="151.0" promptText="Naturalidade" />
-                                          <TextField layoutX="580.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Nacionalidae" />
+                                          <TextField layoutX="811.0" layoutY="55.0" promptText="CPF" />
+                                          <TextField layoutX="811.0" layoutY="112.0" promptText="RG" />
+                                          <ComboBox layoutX="349.0" layoutY="215.0" prefHeight="25.0" prefWidth="149.0" promptText="Estado Civil" />
+                                          <TextField layoutX="572.0" layoutY="216.0" prefHeight="23.0" prefWidth="151.0" promptText="Naturalidade" />
+                                          <TextField layoutX="572.0" layoutY="165.0" prefHeight="23.0" prefWidth="151.0" promptText="Nacionalidade" />
+                                          <TextField layoutX="348.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Data de nascimento" />
+                                          <TextField layoutX="572.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Conjuge" />
+                                          <TextField layoutX="572.0" layoutY="112.0" prefHeight="23.0" prefWidth="151.0" promptText="Dependentes" />
+                                          <TextField layoutX="810.0" layoutY="165.0" prefHeight="23.0" prefWidth="151.0" promptText="Endereço completo" />
+                                          <TextField layoutX="1039.0" layoutY="55.0" prefHeight="23.0" prefWidth="151.0" promptText="Email" />
                                        </children>
                               </AnchorPane>
                            </content>
@@ -410,10 +415,10 @@
                         <content>
                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="857.0" prefWidth="1380.0">
                                        <children>
-                                          <TableView fx:id="tableDadoProfissional" layoutX="-1.0" layoutY="211.0" prefHeight="607.0" prefWidth="1393.0">
+                                          <TableView fx:id="tableDadoProfissional" layoutX="25.0" layoutY="207.0" prefHeight="607.0" prefWidth="1393.0">
                                             <columns>
-                                                <TableColumn fx:id="colIdFunc" prefWidth="22.0" text="ID" />
-                                              <TableColumn id="colCargo" fx:id="colCargo" prefWidth="50.0" text="Cargo" />
+                                                <TableColumn fx:id="colNomeJun" prefWidth="36.0" text="Nome" />
+                                              <TableColumn id="colCargo" fx:id="colCargo" minWidth="0.0" prefWidth="36.0" text="Cargo" />
                                               <TableColumn id="coldepartamento" fx:id="coldepartamento" prefWidth="92.0" text="Departamento" />
                                                 <TableColumn id="colFuncao" fx:id="colFuncao" prefWidth="47.0" text="Função" />
                                                 <TableColumn id="colMaquinas" fx:id="colMaquinas" prefWidth="101.0" text="Máquinas opera" />

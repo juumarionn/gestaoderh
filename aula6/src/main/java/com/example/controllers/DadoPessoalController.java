@@ -106,6 +106,7 @@ public class DadoPessoalController {
     @FXML private TableColumn<DadoPessoal, String> colContato_EmergenciaFunc;
 
     @FXML private TableView<DadoProfissional> tableDadoProfissional;
+    @FXML private TableColumn<DadoProfissional, String> colNomeJun;
     @FXML private TableColumn<DadoProfissional, String> colCargo;
     @FXML private TableColumn<DadoProfissional, String> coldepartamento;
     @FXML private TableColumn<DadoProfissional, String> colFuncao;
