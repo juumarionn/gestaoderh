@@ -160,15 +160,6 @@ public class DadoPessoalController {
 
 
 
-    @FXML private TabPane tabPaneDadoPessoal;
-    @FXML private Tab tabCadastrarDadoPessoal;
-    @FXML private Tab tabAtualizarDadoPessoal;
-    @FXML private Tab tabListarDadoPessoal;
-
-    @FXML private TabPane tabPaneDadoProfissional;
-    @FXML private Tab tabCadastrarDadoProfissional;
-    @FXML private Tab tabAtualizarDadoProfissional;
-    @FXML private Tab tabListarDadoProfissional;
 
 
     private ObservableList<DadoPessoal> listaDadoPessoal = FXCollections.observableArrayList();
@@ -249,28 +240,48 @@ public class DadoPessoalController {
 }
 
 @FXML
-private void salvarDadoPessoal() {
+private void salvarDadosProfissional() {
     try (Connection conn = Database.getConnection();
-         PreparedStatement stmt = conn.prepareStatement("INSERT INTO dadospessoais (nome_completo, data_nascimento, sexo, estado_civil, conjuge, dependentes, nacionalidade, naturalidade, cpf, rg, endereco, telefone, email, filiacao, tipo_sanguineo, contato_emergencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-            stmt.setString(1, txtnome_completoFunc.getText());
-            stmt.setString(2, txtdatanascimentoFunc.getText());
-            stmt.setString(3, comboBoxSexo.getValue());
-            stmt.setString(4, comboBoxEstadoCivil.getValue());
-            stmt.setString(5, txtconjugeFunc.getText());
-            stmt.setString(6, txtdependentesFunc.getText());
-            stmt.setString(7, txtnacionalidadeFunc.getText());
-            stmt.setString(8, txtnaturalidadeFunc.getText());
-            stmt.setString(9, txtcpfFunc.getText());
-            stmt.setString(10, txtrgFunc.getText());
-            stmt.setString(11, txtenderecoFunc.getText());
-            stmt.setString(12, txttelefoneFunc.getText());
-            stmt.setString(13, txtemailFunc.getText());
-            stmt.setString(14, txtfiliacaoFunc.getText());
-            stmt.setString(15, txttipo_sanguineoFunc.getText());
-            stmt.setString(16, txtcontato_emergenciaFunc.getText());
-            stmt.executeUpdate();
-            carregarDadoPessoal();
+         PreparedStatement stmt = conn.prepareStatement("INSERT INTO dadospessoais (nome_completo, data_nascimento, sexo, estado_civil, conjuge, dependentes, nacionalidade, naturalidade, cpf, rg, endereco, telefone, email, filiacao, tipo_sanguineo, contato_emergencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+         PreparedStatement stmt_1 = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+                
+                stmt.setString(1, txtnome_completoFunc.getText());
+                stmt.setString(2, txtdatanascimentoFunc.getText());
+                stmt.setString(3, comboBoxSexo.getValue());
+                stmt.setString(4, comboBoxEstadoCivil.getValue());
+                stmt.setString(5, txtconjugeFunc.getText());
+                stmt.setString(6, txtdependentesFunc.getText());
+                stmt.setString(7, txtnacionalidadeFunc.getText());
+                stmt.setString(8, txtnaturalidadeFunc.getText());
+                stmt.setString(9, txtcpfFunc.getText());
+                stmt.setString(10, txtrgFunc.getText());
+                stmt.setString(11, txtenderecoFunc.getText());
+                stmt.setString(12, txttelefoneFunc.getText());
+                stmt.setString(13, txtemailFunc.getText());
+                stmt.setString(14, txtfiliacaoFunc.getText());
+                stmt.setString(15, txttipo_sanguineoFunc.getText());
+                stmt.setString(16, txtcontato_emergenciaFunc.getText());
+                stmt.executeUpdate();
 
+                stmt_1.setString(1, txtcargo.getText());
+                stmt_1.setString(2, txtdepartamento.getText());
+                stmt_1.setString(3, txtfuncao.getText());
+                stmt_1.setString(4, txtmaquinas.getText());
+                stmt_1.setString(5, txtadmissao.getText());
+                stmt_1.setString(6, txtsalario.getText());
+                stmt_1.setString(7, txtdadosbancarios.getText());
+                stmt_1.setString(8, txtbeneficios.getText());
+                stmt_1.setString(9, txtescolaridade.getText());
+                stmt_1.setString(10, txtctps.getText());
+                stmt_1.setString(11, txtpis.getText());
+                stmt_1.setString(12, txtcontrato.getText());
+                stmt_1.setString(13, txthorario.getText());
+                stmt_1.setString(14, txtacidentes.getText());
+                stmt_1.setString(15, txtadvertencias.getText());
+                stmt_1.executeUpdate();
+
+                carregarDadoProfissional();
+                carregarDadoPessoal();
             mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário salvo com sucesso!");
         } catch (SQLException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao salvar funcionário: " + e.getMessage());
@@ -278,31 +289,8 @@ private void salvarDadoPessoal() {
     }
 
     @FXML
-private void salvarDadoProfissional() {
-    try (Connection conn = Database.getConnection();
-         PreparedStatement stmt = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-            stmt.setString(1, txtcargo.getText());
-            stmt.setString(2, txtdepartamento.getText());
-            stmt.setString(3, txtfuncao.getText());
-            stmt.setString(4, txtmaquinas.getText());
-            stmt.setString(5, txtadmissao.getText());
-            stmt.setString(6, txtsalario.getText());
-            stmt.setString(7, txtdadosbancarios.getText());
-            stmt.setString(8, txtbeneficios.getText());
-            stmt.setString(9, txtescolaridade.getText());
-            stmt.setString(10, txtctps.getText());
-            stmt.setString(11, txtpis.getText());
-            stmt.setString(12, txtcontrato.getText());
-            stmt.setString(13, txthorario.getText());
-            stmt.setString(14, txtacidentes.getText());
-            stmt.setString(15, txtadvertencias.getText());
-            stmt.executeUpdate();
-            carregarDadoProfissional();
-
-            mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário salvo com sucesso!");
-        } catch (SQLException e) {
-            mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao salvar funcionário: " + e.getMessage());
-        }
+private void salvarDadoPessoal() {
+        
     }
             
     @FXML
@@ -390,7 +378,7 @@ private void salvarDadoProfissional() {
             txtEmailAtualizarFunc.clear();
             txtContatoEmergenciaAtualizarFunc.clear();
 
-            tabPaneDadoPessoal.getSelectionModel().select(tabListarDadoPessoal);
+           
         
        
            
@@ -407,7 +395,7 @@ private void salvarDadoProfissional() {
             txtacidentesAtualizarFunc.clear();
             txtadvertenciasAtualizarFunc.clear();
 
-            tabPaneDadoProfissional.getSelectionModel().select(tabListarDadoProfissional);
+           
         }
     
     
@@ -423,7 +411,6 @@ private void salvarDadoProfissional() {
                 txtEmailAtualizarFunc.setText(dadopessoalSelecionado.getEmail());
                 txtContatoEmergenciaAtualizarFunc.setText(dadopessoalSelecionado.getContato_emergencia());
 
-                tabPaneDadoPessoal.getSelectionModel().select(tabAtualizarDadoPessoal);
             }
     
 
@@ -445,7 +432,6 @@ private void salvarDadoProfissional() {
 
 
 
-                tabPaneDadoProfissional.getSelectionModel().select(tabAtualizarDadoProfissional);
             }
     }
 
@@ -656,7 +642,7 @@ private void salvarDadoProfissional() {
                 stmt.executeUpdate();
                 carregarDadoPessoal();
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário excluído com sucesso!");
-                tabPaneDadoPessoal.getSelectionModel().select(tabListarDadoPessoal);
+               
             } catch (SQLException e) {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao excluir funcionário: " + e.getMessage());
             }
@@ -675,7 +661,7 @@ private void salvarDadoProfissional() {
                 stmt.executeUpdate();
                 carregarDadoProfissional();
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário excluído com sucesso!");
-                tabPaneDadoProfissional.getSelectionModel().select(tabListarDadoProfissional);
+                
             } catch (SQLException e) {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao excluir funcionário: " + e.getMessage());
             }
