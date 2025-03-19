@@ -243,7 +243,7 @@ public class DadoPessoalController {
 private void salvarDadosProfissional() {
     try (Connection conn = Database.getConnection();
          PreparedStatement stmt = conn.prepareStatement("INSERT INTO dadospessoais (nome_completo, data_nascimento, sexo, estado_civil, conjuge, dependentes, nacionalidade, naturalidade, cpf, rg, endereco, telefone, email, filiacao, tipo_sanguineo, contato_emergencia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-         PreparedStatement stmt_1 = conn.prepareStatement("INSERT INTO DadoProfissional (cargo, departamento, funcao, maquinas, admissao, salario, dadosbancarios, beneficios, escolaridade, ctps, pis, contrato, horario, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+         PreparedStatement stmt_1 = conn.prepareStatement("INSERT INTO dadosprofissionais (cargo, departamento, funcao, maquina_opera, admissao, salario, dados_bancarios, beneficios, escolaridade, ctps, pis_pasesp, contrato, horario_trabalho, acidentes, advertencias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
                 
                 stmt.setString(1, txtnome_completoFunc.getText());
                 stmt.setString(2, txtdatanascimentoFunc.getText());
