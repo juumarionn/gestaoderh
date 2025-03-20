@@ -560,7 +560,7 @@ private void salvarDadoPessoal() {
             if (!filtroFiliacaoFunc.getText().isEmpty() && !dadopessoal.getFiliacao().toLowerCase().contains(filtroFiliacaoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroTipoSanguineoFunc.getValues().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getValue().toLowerCase())) {
+            if (!filtroTipoSanguineoFunc.getValue().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getValue().toLowerCase())) {
                 return false;
             }
             if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContato_emergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
