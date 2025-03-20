@@ -29,21 +29,21 @@ public class DadoPessoalController {
     @FXML private TextField txttelefoneFunc;
     @FXML private TextField txtemailFunc;
     @FXML private TextField txtfiliacaoFunc;
-    @FXML private TextField txttipo_sanguineoFunc;
+    @FXML private ComboBox<String>comboBoxtipo_sanguineoFunc;
     @FXML private TextField txtcontato_emergenciaFunc;
 
     @FXML private TextField txtcargo;
-    @FXML private TextField txtdepartamento;
+    @FXML private ComboBox<String> comboBoxdepartamento;
     @FXML private TextField txtfuncao;
     @FXML private TextField txtmaquinas;
     @FXML private TextField txtadmissao;
-    @FXML private TextField txtsalario;
+    @FXML private TextField txtsalario; 
     @FXML private TextField txtdadosbancarios;
     @FXML private TextField txtbeneficios;
     @FXML private TextField txtescolaridade;
     @FXML private TextField txtctps;
     @FXML private TextField txtpis;
-    @FXML private TextField txtcontrato;
+    @FXML private ComboBox<String> comboBoxcontrato;
     @FXML private TextField txthorario;
     @FXML private TextField txtacidentes;
     @FXML private TextField txtadvertencias;
@@ -64,11 +64,11 @@ public class DadoPessoalController {
     @FXML private TextField txtTelefoneAtualizarFunc;
     @FXML private TextField txtEmailAtualizarFunc;
     @FXML private TextField txtFiliacaoAtualizarFunc;
-    @FXML private TextField txtTipoSanguineoAtualizarFunc;
+    @FXML private ComboBox<String>comboBoxTipoSanguineoAtualizarFunc;
     @FXML private TextField txtContatoEmergenciaAtualizarFunc;
 
     @FXML private TextField txtcargoAtualizarFunc;
-    @FXML private TextField txtdepartamentoAtualizarFunc;
+    @FXML private ComboBox<String> comboBoxdepartamentoAtualizarFunc;
     @FXML private TextField txtfuncaoAtualizarFunc;
     @FXML private TextField txtmaquinasAtualizarFunc;
     @FXML private TextField txtadmissaoAtualizarFunc;
@@ -78,7 +78,7 @@ public class DadoPessoalController {
     @FXML private TextField txtescolaridadeAtualizarFunc;
     @FXML private TextField txtctpsAtualizarFunc;
     @FXML private TextField txtpisAtualizarFunc;
-    @FXML private TextField txtcontratoAtualizarFunc;
+    @FXML private ComboBox<String>comboBoxcontratoAtualizarFunc;
     @FXML private TextField txthorarioAtualizarFunc;
     @FXML private TextField txtacidentesAtualizarFunc;
     @FXML private TextField txtadvertenciasAtualizarFunc;
@@ -139,11 +139,11 @@ public class DadoPessoalController {
     @FXML private TextField filtroTelefoneFunc;
     @FXML private TextField filtroEmailFunc;
     @FXML private TextField filtroFiliacaoFunc;
-    @FXML private TextField filtroTipoSanguineoFunc;
+    @FXML private ComboBox<String>filtroTipoSanguineoFunc;
     @FXML private TextField filtroContatoEmergenciaFunc;
 
     @FXML private TextField filtrocargo;
-    @FXML private TextField filtrodepartamento;
+    @FXML private ComboBox<String>filtrodepartamento;
     @FXML private TextField filtrofuncao;
     @FXML private TextField filtromaquinas;
     @FXML private TextField filtroadmissao;
@@ -153,7 +153,7 @@ public class DadoPessoalController {
     @FXML private TextField filtroescolaridade;
     @FXML private TextField filtroctps;
     @FXML private TextField filtropis;
-    @FXML private TextField filtrocontrato;
+    @FXML private ComboBox<String>filtrocontrato;
     @FXML private TextField filtrohorario;
     @FXML private TextField filtroacidentes;
     @FXML private TextField filtroadvertencias;
@@ -191,21 +191,39 @@ public class DadoPessoalController {
         colContato_EmergenciaFunc.setCellValueFactory(new PropertyValueFactory<>("contato_emergencia"));
 
         ObservableList<String> estadosCivis = FXCollections.observableArrayList(
-                "Solteiro(a)",
-                "Casado(a)",
-                "Divorciado(a)",
-                "Viúvo(a)",
-                "Outro"
-        );
+            "Solteiro(a)",
+            "Casado(a)",
+            "Divorciado(a)",
+            "Viúvo(a)",
+            "Outro"
+);
         comboBoxEstadoCivil.setItems(estadosCivis);
 
         ObservableList<String> sexos = FXCollections.observableArrayList(
-            "Masculino",
-            "Feminino",
-            "Outro"
-    );
-    comboBoxSexo.setItems(sexos);
+        "Masculino",
+        "Feminino",
+        "Outro"
+);
+        comboBoxSexo.setItems(sexos);
 
+
+        ObservableList<String> tiposSanguineos = FXCollections.observableArrayList(
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"
+ );
+         comboBoxtipo_sanguineoFunc.setItems(tiposSanguineos);
+
+    
+            
+
+        
+    
         carregarDadoPessoal();
 
         colCargo.setCellValueFactory(new PropertyValueFactory<>("cargo"));
@@ -223,7 +241,28 @@ public class DadoPessoalController {
         colHorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
         colAcidentes.setCellValueFactory(new PropertyValueFactory<>("acidentes"));
         colAdvertencia.setCellValueFactory(new PropertyValueFactory<>("advertencias"));
-        
+
+        ObservableList<String> departamentos = FXCollections.observableArrayList(
+            "Automação",
+            "Estoque",
+            "Financeiro",
+            "Manutenção",
+            "Produção",
+            "Rh"
+    );
+    
+        comboBoxdepartamento.setItems(departamentos);
+
+
+
+        ObservableList<String> contratos = FXCollections.observableArrayList(
+            "Temporário",
+            "CLT"
+                
+        );
+        comboBoxcontrato.setItems(contratos);
+
+              
 
         carregarDadoProfissional();
     
@@ -263,12 +302,12 @@ private void salvarDadosProfissional() {
                 stmt.setString(12, txttelefoneFunc.getText());
                 stmt.setString(13, txtemailFunc.getText());
                 stmt.setString(14, txtfiliacaoFunc.getText());
-                stmt.setString(15, txttipo_sanguineoFunc.getText());
+                stmt.setString(15, comboBoxtipo_sanguineoFunc.getValue());
                 stmt.setString(16, txtcontato_emergenciaFunc.getText());
                 stmt.executeUpdate();
 
                 stmt_1.setString(1, txtcargo.getText());
-                stmt_1.setString(2, txtdepartamento.getText());
+                stmt_1.setString(2, comboBoxdepartamento.getValue());
                 stmt_1.setString(3, txtfuncao.getText());
                 stmt_1.setString(4, txtmaquinas.getText());
                 stmt_1.setString(5, txtadmissao.getText());
@@ -278,7 +317,7 @@ private void salvarDadosProfissional() {
                 stmt_1.setString(9, txtescolaridade.getText());
                 stmt_1.setString(10, txtctps.getText());
                 stmt_1.setString(11, txtpis.getText());
-                stmt_1.setString(12, txtcontrato.getText());
+                stmt_1.setString(12, comboBoxcontrato.getValue());
                 stmt_1.setString(13, txthorario.getText());
                 stmt_1.setString(14, txtacidentes.getText());
                 stmt_1.setString(15, txtadvertencias.getText());
@@ -334,14 +373,14 @@ private void salvarDadoPessoal() {
             
                 
                 String cargo = txtcargoAtualizarFunc.getText();
-                String departamento = txtdepartamentoAtualizarFunc.getText();
+                String departamento = comboBoxdepartamentoAtualizarFunc.getValue();
                 String funcao = txtfuncaoAtualizarFunc.getText();
                 String maquinas = txtmaquinasAtualizarFunc.getText();
                 String salario = txtsalarioAtualizarFunc.getText();
                 String dadosbancarios = txtdadosbancariosAtualizarFunc.getText();
                 String beneficios = txtbeneficiosAtualizarFunc.getText();
                 String escolaridade = txtescolaridadeAtualizarFunc.getText();
-                String contrato = txtcontratoAtualizarFunc.getText();
+                String contrato = comboBoxcontratoAtualizarFunc.getValue();
                 String horario = txthorarioAtualizarFunc.getText();
                 String acidentes = txtacidentesAtualizarFunc.getText();
                 String advertencias = txtadvertenciasAtualizarFunc.getText();
@@ -387,14 +426,14 @@ private void salvarDadoPessoal() {
        
            
             txtcargoAtualizarFunc.clear();
-            txtdepartamentoAtualizarFunc.clear();
+            comboBoxdepartamentoAtualizarFunc.setValue(null);
             txtfuncaoAtualizarFunc.clear();
             txtmaquinasAtualizarFunc.clear();
             txtsalarioAtualizarFunc.clear();
             txtdadosbancariosAtualizarFunc.clear();
             txtbeneficiosAtualizarFunc.clear();
             txtescolaridadeAtualizarFunc.clear();
-            txtcontratoAtualizarFunc.clear();
+            comboBoxcontratoAtualizarFunc.setValue(null);
             txthorarioAtualizarFunc.clear();
             txtacidentesAtualizarFunc.clear();
             txtadvertenciasAtualizarFunc.clear();
@@ -421,14 +460,14 @@ private void salvarDadoPessoal() {
             DadoProfissional dadoprofissionalSelecionado = tableDadoProfissional.getSelectionModel().getSelectedItem();
             if (dadoprofissionalSelecionado!= null) {
                 txtcargoAtualizarFunc.setText(dadoprofissionalSelecionado.getCargoFunc());
-                txtdepartamentoAtualizarFunc.setText(dadoprofissionalSelecionado.getDepartamento());
+                comboBoxdepartamentoAtualizarFunc.setValue(dadoprofissionalSelecionado.getDepartamento());
                 txtfuncaoAtualizarFunc.setText(dadoprofissionalSelecionado.getFuncao());
                 txtmaquinasAtualizarFunc.setText(dadoprofissionalSelecionado.getMaquina_opera());
-                 txtsalarioAtualizarFunc.setText(dadoprofissionalSelecionado.getSalario());
+                txtsalarioAtualizarFunc.setText(dadoprofissionalSelecionado.getSalario());
                 txtdadosbancariosAtualizarFunc.setText(dadoprofissionalSelecionado.getDados_bancarios());
                 txtbeneficiosAtualizarFunc.setText(dadoprofissionalSelecionado.getBeneficios());
                 txtescolaridadeAtualizarFunc.setText(dadoprofissionalSelecionado.getEscolaridade());
-                txtcontratoAtualizarFunc.setText(dadoprofissionalSelecionado.getContrato());
+                comboBoxcontratoAtualizarFunc.setValue(dadoprofissionalSelecionado.getContrato());
                 txthorarioAtualizarFunc.setText(dadoprofissionalSelecionado.getHorario_trabalho());
                 txtacidentesAtualizarFunc.setText(dadoprofissionalSelecionado.getAcidentes());
                 txtadvertenciasAtualizarFunc.setText(dadoprofissionalSelecionado.getAdvertencia());
@@ -521,7 +560,7 @@ private void salvarDadoPessoal() {
             if (!filtroFiliacaoFunc.getText().isEmpty() && !dadopessoal.getFiliacao().toLowerCase().contains(filtroFiliacaoFunc.getText().toLowerCase())) {
                 return false;
             }
-            if (!filtroTipoSanguineoFunc.getText().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getText().toLowerCase())) {
+            if (!filtroTipoSanguineoFunc.getValue().isEmpty() && !dadopessoal.getTipo_sanguineo().toLowerCase().contains(filtroTipoSanguineoFunc.getValue().toLowerCase())) {
                 return false;
             }
             if (!filtroContatoEmergenciaFunc.getText().isEmpty() && !dadopessoal.getContato_emergencia().toLowerCase().contains(filtroContatoEmergenciaFunc.getText().toLowerCase())) {
@@ -542,7 +581,7 @@ private void salvarDadoPessoal() {
                 if (!filtrocargo.getText().isEmpty() && !DadoProfissional.getCargoFunc().toLowerCase().contains(filtrocargo.getText().toLowerCase())) {
                     return false;
                 }
-                if (!filtrodepartamento.getText().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamento.getText().toLowerCase())) {
+                if (!filtrodepartamento.getValue().isEmpty() && !DadoProfissional.getDepartamento().toLowerCase().contains(filtrodepartamento.getValue().toLowerCase())) {
                     return false;
                 }
                 if (!filtrofuncao.getText().isEmpty() && !DadoProfissional.getFuncao().toLowerCase().contains(filtrofuncao.getText().toLowerCase())) {
@@ -574,7 +613,7 @@ private void salvarDadoPessoal() {
                     return false;
                 }
                     
-                if (!filtrocontrato.getText().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontrato.getText().toLowerCase())) {
+                if (!filtrocontrato.getValue().isEmpty() && !DadoProfissional.getContrato().toLowerCase().contains(filtrocontrato.getValue().toLowerCase())) {
                     return false;
                 }
                 if (!filtrohorario.getText().isEmpty() && !DadoProfissional.getHorario_trabalho().toLowerCase().contains(filtrohorario.getText().toLowerCase())) {
@@ -611,13 +650,13 @@ private void salvarDadoPessoal() {
         filtroTelefoneFunc.clear();
         filtroEmailFunc.clear();
         filtroFiliacaoFunc.clear();
-        filtroTipoSanguineoFunc.clear();
+        filtroTipoSanguineoFunc.setValue(null);
         filtroContatoEmergenciaFunc.clear();
 
         tableDadoPessoal.setItems(listaDadoPessoal);
 
         filtrocargo.clear();
-        filtrodepartamento.clear();
+        filtrodepartamento.setValue(null);
         filtrofuncao.clear();
         filtromaquinas.clear();
         filtroadmissao.clear();
@@ -627,7 +666,7 @@ private void salvarDadoPessoal() {
         filtroescolaridade.clear();
         filtroctps.clear();
         filtropis.clear();
-        filtrocontrato.clear();
+        filtrocontrato.setValue(null);
         filtrohorario.clear();
         filtroacidentes.clear();
         filtroadvertencias.clear();
