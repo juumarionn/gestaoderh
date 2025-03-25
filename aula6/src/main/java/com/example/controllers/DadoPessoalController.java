@@ -163,6 +163,10 @@ public class DadoPessoalController {
     @FXML private TabPane tabPaneCadastro;
     @FXML private Tab tabDadoPessoal;
     @FXML private Tab tabDadoProfissional;
+    @FXML private TabPane tabPaneAtualizar;
+    @FXML private Tab tabAtualizarPessoal;
+    @FXML private Tab tabAtualizarProfissional;
+
 
 
 
@@ -337,7 +341,7 @@ private void salvarDadoPessoal() {
     }
             
     @FXML
-    public void atualizarDadoPessoal() {
+    public void atualizarDadoProfissional() {
         
             int id = Integer.parseInt(txtIdAtualizarFunc.getText());
             String estadoCivil = comboBoxEstadoCivilAtualizarFunc.getValue();
@@ -348,10 +352,23 @@ private void salvarDadoPessoal() {
             String email = txtEmailAtualizarFunc.getText();
             String contato_emergencia = txtContatoEmergenciaAtualizarFunc.getText();
 
+            String cargo = txtcargoAtualizarFunc.getText();
+            String departamento = comboBoxdepartamentoAtualizarFunc.getValue();
+            String funcao = txtfuncaoAtualizarFunc.getText();
+            String maquinas = txtmaquinasAtualizarFunc.getText();
+            String salario = txtsalarioAtualizarFunc.getText();
+            String dadosbancarios = txtdadosbancariosAtualizarFunc.getText();
+            String beneficios = txtbeneficiosAtualizarFunc.getText();                
+            String escolaridade = txtescolaridadeAtualizarFunc.getText();
+            String contrato = comboBoxcontratoAtualizarFunc.getValue();
+            String horario = txthorarioAtualizarFunc.getText();
+            String acidentes = txtacidentesAtualizarFunc.getText();
+            String advertencias = txtadvertenciasAtualizarFunc.getText();
+
 
             try (Connection connection = Database.getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE dadospessoais SET estado_civil = ?, conjuge = ?, dependentes = ?, endereco = ?, telefone = ?, email = ?, contato_emergencia = ? WHERE id = ?")) {
-           
+             PreparedStatement statement = connection.prepareStatement("UPDATE dadospessoais SET estado_civil = ?, conjuge = ?, dependentes = ?, endereco = ?, telefone = ?, email = ?, contato_emergencia = ? WHERE id = ?");
+                PreparedStatement statement_1 = connection.prepareStatement("UPDATE dadosprofissionais SET cargo = ?, departamento = ?, funcao = ?,maquinas = ?, salario = ?, dadosbancarios = ?, beneficios = ?, escolaridade = ?, contrato = ?, horario = ?, acidentes = ?, advertencias = ?  WHERE id = ?")) {
                 statement.setString(1, estadoCivil);
                 statement.setString(2, conjuge);
                 statement.setString(3, dependentes);
@@ -362,54 +379,35 @@ private void salvarDadoPessoal() {
                 statement.setInt(8, id);
                 statement.executeUpdate();
                 carregarDadoPessoal();
+              
+                   statement_1.setString(1, cargo);
+                   statement_1.setString(2, departamento);
+                   statement_1.setString(3, funcao);
+                   statement_1.setString(4, maquinas);
+                   statement_1.setString(5, salario);
+                   statement_1.setString(6, dadosbancarios);
+                   statement_1.setString(7, beneficios);
+                   statement_1.setString(8, escolaridade);
+                   statement_1.setString(9, contrato);
+                   statement_1.setString(10, horario);
+                   statement_1.setString(11, acidentes);
+                   statement_1.setString(12, advertencias);
+                   statement_1.executeUpdate();
+                   carregarDadoProfissional();
+
+            
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário atualizado com sucesso!");
             } catch (SQLException e) {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao atualizar funcionário: " + e.getMessage());
             }
-        }
+    }
 
-        @FXML
-        public void atualizarDadoProfissional() {
+    
+        @FXML private void atualizarDadoPessoal() {
+    tabPaneAtualizar.getSelectionModel().select(tabAtualizarProfissional);
+    }
+
             
-                
-                String cargo = txtcargoAtualizarFunc.getText();
-                String departamento = comboBoxdepartamentoAtualizarFunc.getValue();
-                String funcao = txtfuncaoAtualizarFunc.getText();
-                String maquinas = txtmaquinasAtualizarFunc.getText();
-                String salario = txtsalarioAtualizarFunc.getText();
-                String dadosbancarios = txtdadosbancariosAtualizarFunc.getText();
-                String beneficios = txtbeneficiosAtualizarFunc.getText();
-                String escolaridade = txtescolaridadeAtualizarFunc.getText();
-                String contrato = comboBoxcontratoAtualizarFunc.getValue();
-                String horario = txthorarioAtualizarFunc.getText();
-                String acidentes = txtacidentesAtualizarFunc.getText();
-                String advertencias = txtadvertenciasAtualizarFunc.getText();
-              
-    
-    
-                try (Connection connection = Database.getConnection();
-                 PreparedStatement statement = connection.prepareStatement("UPDATE dadosprofissionais SET cargo = ?, departamento = ?, funcao = ?,maquinas = ?, salario = ?, dadosbancarios = ?, beneficios = ?, escolaridade = ?, contrato = ?, horario = ?, acidentes = ?, advertencias = ?  WHERE id = ?")) {
-               
-                    statement.setString(1, cargo);
-                    statement.setString(2, departamento);
-                    statement.setString(3, funcao);
-                    statement.setString(4, maquinas);
-                    statement.setString(5, salario);
-                    statement.setString(6, dadosbancarios);
-                    statement.setString(7, beneficios);
-                    statement.setString(8, escolaridade);
-                    statement.setString(9, contrato);
-                    statement.setString(10, horario);
-                    statement.setString(11, acidentes);
-                    statement.setString(12, advertencias);
-                    statement.executeUpdate();
-                    carregarDadoProfissional();
-                    mostrarAlerta(Alert.AlertType.INFORMATION, "Sucesso", "Funcionário atualizado com sucesso!");
-                } catch (SQLException e) {
-                    mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao atualizar funcionário: " + e.getMessage());
-                }
-            }
-
         @FXML
         private void limparCamposAtualizacao() {
             txtIdAtualizarFunc.clear();

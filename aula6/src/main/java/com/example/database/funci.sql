@@ -4,8 +4,8 @@ USE GestaoFuncionarios;
 CREATE TABLE `gestaofuncionarios`.`dadospessoais` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome_completo` VARCHAR(45) NOT NULL,
-  `data_nascimento` DATE NOT NULL,
-  `sexo` CHAR(1) NOT NULL,
+  `data_nascimento` VARCHAR(15) NOT NULL,
+  `sexo` CHAR(20) NOT NULL,
   `estado_civil` VARCHAR(15) NULL,
   `conjuge` VARCHAR(45) NULL,
   `dependentes` VARCHAR(150) NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   `departamento` VARCHAR(45) NOT NULL,
   `funcao` VARCHAR(150) NOT NULL,
   `maquina_opera` VARCHAR(45) NULL,
-  `admissao` DATE NOT NULL,
+  `admissao` VARCHAR(15) NOT NULL,
   `salario` VARCHAR(45) NOT NULL,
   `dados_bancarios` VARCHAR(45) NOT NULL,
   `beneficios` VARCHAR(45) NULL,
@@ -49,10 +49,3 @@ CREATE TABLE `gestaofuncionarios`.`dadosprofissionais` (
   UNIQUE INDEX `ctps_UNIQUE` (`ctps` ASC),
   UNIQUE INDEX `pis_pasesp_UNIQUE` (`pis_pasesp` ASC),
   UNIQUE INDEX `dados_bancarios_UNIQUE` (`dados_bancarios` ASC));
-
-SELECT DATE_FORMAT(data_nascimento, '%d/%m/%Y') AS data_nascimento_br
-FROM dadospessoais;
-
-SELECT DATE_FORMAT(admissao, '%d/%m/%Y') AS admissao_br
-FROM dadosprofissionais;
-
